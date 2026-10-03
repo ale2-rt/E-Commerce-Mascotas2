@@ -1,0 +1,3192 @@
+<!-- NutriCan - Carrito y Checkout Desktop -->
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carrito y Resumen de Compra | NutriCan</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#11462d",
+            "on-surface": "#1e1b18",
+            "surface-dim": "#e0d9d4",
+            "secondary": "#a33d23",
+            "surface-bright": "#fff8f4",
+            "on-tertiary-container": "#eac56b",
+            "on-surface-variant": "#414943",
+            "on-background": "#1e1b18",
+            "on-primary-fixed-variant": "#1d5036",
+            "secondary-fixed-dim": "#ffb4a2",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#9dd3b0",
+            "surface-container-highest": "#e8e1dc",
+            "on-tertiary-fixed": "#251a00",
+            "inverse-primary": "#9dd3b0",
+            "secondary-fixed": "#ffdad2",
+            "tertiary-fixed": "#ffdf96",
+            "tertiary-container": "#6a5100",
+            "on-secondary-container": "#731a04",
+            "tertiary-fixed-dim": "#e7c268",
+            "surface-tint": "#36684c",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#002111",
+            "inverse-surface": "#33302d",
+            "tertiary": "#4e3b00",
+            "surface-variant": "#e8e1dc",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c0c9c0",
+            "inverse-on-surface": "#f7efea",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#a0d5b3",
+            "on-secondary-fixed-variant": "#83260e",
+            "surface-container-low": "#faf2ed",
+            "surface-container-high": "#eee7e2",
+            "primary-fixed": "#b8efcc",
+            "background": "#fff8f4",
+            "on-error-container": "#93000a",
+            "surface": "#fff8f4",
+            "primary-container": "#2c5e43",
+            "secondary-container": "#ff8162",
+            "on-tertiary-fixed-variant": "#5a4400",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#3c0700",
+            "outline": "#717972",
+            "surface-container": "#f4ece7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": [
+              "Plus Jakarta Sans"
+            ],
+            "display-lg-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "label-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "title-md": [
+              "Plus Jakarta Sans"
+            ],
+            "body-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "label-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-md": [
+              "Plus Jakarta Sans"
+            ],
+            "body-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "label-md": [
+              "Plus Jakarta Sans"
+            ],
+            "display-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg-mobile": [
+              "28px",
+              {
+                "lineHeight": "34px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "18px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-sm": [
+              "18px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "600"
+              }
+            ],
+            "title-md": [
+              "16px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "600"
+              }
+            ],
+            "body-sm": [
+              "12px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-sm": [
+              "10px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-md": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "display-lg": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "headline-lg": [
+              "24px",
+              {
+                "lineHeight": "30px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-warm-shadow {
+      box-shadow: 0px 4px 16px -2px rgba(44, 94, 67, 0.06), 0px 2px 6px -1px rgba(38, 35, 32, 0.04);
+    }
+    .custom-floating-shadow {
+      box-shadow: 0px 12px 32px -4px rgba(44, 94, 67, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-full flex flex-col selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- SHARED TOPNAVBAR (Desktop Full) -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-margin py-space-sm w-full bg-surface-container-lowest dark:bg-surface shadow-sm dark:shadow-none border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-space-lg">
+<a class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight flex items-center gap-1.5 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-primary text-[28px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span>NutriCan</span>
+</a>
+<!-- Search Bar on Left as per schema -->
+<div class="hidden lg:flex items-center bg-surface-container rounded-full px-3.5 py-1.5 w-64 border border-outline-variant/60 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2">search</span>
+<input class="bg-transparent border-none p-0 text-on-surface text-body-sm font-body-sm focus:ring-0 placeholder:text-outline w-full outline-none" placeholder="Buscar alimento o suplemento..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Catálogo</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Planes de Suscripción</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Calculadora Nutricional</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Blog Veterinario</a>
+</nav>
+<!-- Trailing Actions Cluster -->
+<div class="flex items-center gap-space-md">
+<div class="hidden sm:flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant/40">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="A gentle, well-groomed golden retriever sitting proudly against a clean, warm botanical veterinary studio background with soft natural illumination and earthy neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAnCOXT5ukZIYAJSL8aLlZL38UZIGtL6SGIYJw1Bj0AnszH5hqZqBVJWx1VMGZGywtdO58YbfR0DMUDdBMrJUqbMhVJigbKEhyobVl70flBH_gFA8hNuBb2mF4hmJ8sPyWxeO6RKj8UHQG9ax720DK8Kml_O69cVeGCz31RJGu1488smkWAnLbHH4QRjfPQXWVhYdtUiYcK0ATB2oMCa6xQz8t4EQ9dkt6VsAMU0RkS1hgiJIrdaxj"/>
+<span class="font-label-md text-label-md text-primary font-bold">Max - Golden Retriever</span>
+</div>
+<a class="hidden sm:flex items-center gap-1 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span>Mi Cuenta</span>
+</a>
+<!-- Shopping Bag Active Badge -->
+<a aria-label="Carrito de compras" class="relative p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/15 transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary font-label-sm text-label-sm w-5 h-5 rounded-full flex items-center justify-center font-bold">2</span>
+</a>
+</div>
+</header>
+<!-- MAIN VIEWPORT CANVAS -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin py-space-lg">
+<!-- Free Shipping Notification Bar -->
+<div class="mb-space-lg bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/50 custom-warm-shadow flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary flex items-center gap-1.5">
+            ¡Felicidades! Tienes Envío Gratis estándar en tu pedido
+            <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Has superado los $699 MXN mínimos para entrega veterinaria refrigerada en CDMX y área metropolitana.</p>
+</div>
+</div>
+<div class="w-full md:w-64 shrink-0">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1 font-bold">
+<span>Meta: $699 MXN</span>
+<span class="text-primary">100% Alcanzado</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 w-full"></div>
+</div>
+</div>
+</div>
+<!-- Progress Stepper Header -->
+<section class="mb-space-xl text-center">
+<div class="inline-flex items-center justify-center gap-2 sm:gap-6 bg-surface-container-lowest px-6 py-3 rounded-full border border-outline-variant/60 custom-warm-shadow">
+<!-- Step 1: Active -->
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md">1</span>
+<span class="font-label-lg text-label-lg tracking-tight">Carrito &amp; Frecuencia</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">chevron_right</span>
+<!-- Step 2 -->
+<div class="flex items-center gap-2 text-on-surface-variant opacity-70">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-semibold">2</span>
+<span class="font-label-lg text-label-lg">Dirección de Envío</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">chevron_right</span>
+<!-- Step 3 -->
+<div class="flex items-center gap-2 text-on-surface-variant opacity-70">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-semibold">3</span>
+<span class="font-label-lg text-label-lg">Pago Seguro</span>
+</div>
+</div>
+</section>
+<!-- TWO COLUMN DESKTOP CHECKOUT GRID -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: 65% (8 of 12 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Header of Left Column -->
+<div class="flex items-baseline justify-between border-b border-outline-variant/40 pb-3">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Tu Carrito Nutricional</h1>
+<span class="font-label-md text-label-md bg-primary-fixed text-on-primary-fixed-variant px-2.5 py-0.5 rounded-full font-bold">2 Productos</span>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+            Seguir comprando
+          </a>
+</div>
+<!-- ITEMS IN CART LIST -->
+<div class="flex flex-col gap-space-md">
+<!-- ITEM 1: Salmón & Camote (Subscription) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 custom-warm-shadow relative transition-all hover:border-primary/40">
+<div class="flex flex-col sm:flex-row gap-space-md">
+<!-- Product Image Thumbnail -->
+<div class="relative w-full sm:w-32 h-32 rounded-lg overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean, appetizing veterinary dog food packaging mockup for NutriCan Salmon and Sweet Potato recipe, displayed in soft cinematic studio lighting with fresh salmon cuts and sweet potato slices surrounding the earthy sage green sack." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd-NEy7Wmi6lCHdUm_Fjrr0hVMyQ8irqJu46U1YWYNSk1nWyUQCRzT2WveUyD93jDq-mzyjDmnok-vrxyqlxPoTXXXTaVG2vwBqZeUZauBcSmpM_Uf1M5NLXOnnvIIWVSc93Skd1-kr4s4GPGU2LR4gu4aoHpsKimvhaeSIJ_-l99iackpWF0ZXuKLYlfWFjjk9I--MMSVKjq9DxJQ6c4Dfj1IHSVsOyI_ypoXYXSuBPnFuHYUGnZZ"/>
+<span class="absolute top-2 left-2 bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-sm">
+                  -15% Auto-Envío
+                </span>
+</div>
+<!-- Product Details Content -->
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">NutriCan Salmón &amp; Camote</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Bolsa fresca formulada al vapor • Presentación 12 kg (Etapa Adulto Grande)</p>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">$1,173 MXN</div>
+<div class="font-body-sm text-body-sm text-outline line-through">$1,380 MXN</div>
+</div>
+</div>
+<!-- Subscription Badge Indicator -->
+<div class="mt-3 inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">autorenew</span>
+<span class="font-label-md text-label-md text-primary font-bold">Modalidad: Auto-Envío cada 4 semanas</span>
+</div>
+<p class="mt-2 text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">calendar_month</span>
+<span>Próxima entrega estimada: <strong class="text-on-surface">Jueves 24 de Octubre</strong></span>
+</p>
+</div>
+<!-- Quantity and Row Actions -->
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex flex-wrap items-center justify-between gap-3">
+<!-- Stepper -->
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Cantidad:</span>
+<div class="flex items-center bg-surface-container rounded-full p-1 border border-outline-variant/60">
+<button aria-label="Disminuir cantidad" class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-dim transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-title-md text-title-md font-bold px-3 text-on-surface">1</span>
+<button aria-label="Aumentar cantidad" class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-dim transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item Actions -->
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>
+<span>Mover a favoritos</span>
+</button>
+<span class="text-outline-variant">|</span>
+<button class="font-label-md text-label-md text-error hover:opacity-80 transition-opacity flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 2: Premios Dentales (One-Time Purchase) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 custom-warm-shadow relative transition-all hover:border-primary/40">
+<div class="flex flex-col sm:flex-row gap-space-md">
+<!-- Product Image Thumbnail -->
+<div class="relative w-full sm:w-32 h-32 rounded-lg overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="NutriCan natural dental treats for dogs infused with organic spirulina, shown in a clean craft pouch with detailed botanical illustrations, studio shot on light neutral textured surface with natural soft side-lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgXzRDeYfcNi2hmHNObH17TVuyBzTpeWY-HZ1gtrpARScJhhYIDHgkPA_6M-iwA69VdPjhbv6nYceHIC8sv8IOgLwBY6NEe9y1ClSzjWmnzAw2sYx24t_lzfAmoe4PQrpSppez-l9mzEDQiNX-MzmmlGIPMBjlKThrWvvinswKcwUvOOtBwyljVf5uJyjWiKPi5GyuSYVvVw6orLoJgPzcbOCUnZDXz4dCbtHRRFDO3kiqj6sCqU6Z"/>
+<span class="absolute top-2 left-2 bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold border border-outline-variant/60">
+                  Compra única
+                </span>
+</div>
+<!-- Product Details Content -->
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Premios Dentales con Espirulina</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Snack natural prensado en frío para higiene bucal • Paquete 250g</p>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">$180 MXN</div>
+</div>
+</div>
+<div class="mt-3 inline-flex items-center gap-2 bg-surface-container-low px-3 py-1 rounded-full text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-label-md text-label-md">Compra regular (No suscrito)</span>
+</div>
+</div>
+<!-- Quantity and Row Actions -->
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex flex-wrap items-center justify-between gap-3">
+<!-- Stepper -->
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Cantidad:</span>
+<div class="flex items-center bg-surface-container rounded-full p-1 border border-outline-variant/60">
+<button aria-label="Disminuir cantidad" class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-dim transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-title-md text-title-md font-bold px-3 text-on-surface">1</span>
+<button aria-label="Aumentar cantidad" class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-dim transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item Actions -->
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>
+<span>Mover a favoritos</span>
+</button>
+<span class="text-outline-variant">|</span>
+<button class="font-label-md text-label-md text-error hover:opacity-80 transition-opacity flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- DELIVERY FREQUENCY CONFIGURATION MODULE FOR MAX -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/60 custom-warm-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">tune</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Frecuencia Personalizada para Max</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ajuste algorítmico calculado para un Golden Retriever adulto de 31 kg (aprox. 430g diarios).</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg border border-outline-variant/40 mb-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<label class="block font-label-lg text-label-lg font-bold text-on-surface" for="freq-select">Intervalo de reposición sugerido:</label>
+<span class="font-body-sm text-body-sm text-primary font-semibold">Cada 4 semanas (Recomendado para evitar desabasto)</span>
+</div>
+<div class="w-full sm:w-64">
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 text-body-md font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary shadow-sm outline-none" id="freq-select">
+<option value="2">Cada 2 semanas</option>
+<option value="3">Cada 3 semanas</option>
+<option selected="" value="4">Cada 4 semanas (Recomendado)</option>
+<option value="6">Cada 6 semanas</option>
+<option value="8">Cada 8 semanas</option>
+</select>
+</div>
+</div>
+</div>
+<!-- WhatsApp Reminder Notification Checkbox -->
+<div class="space-y-3">
+<label class="flex items-start gap-3 cursor-pointer group">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary border-outline-variant w-4 h-4" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">
+<strong>Recordarme por WhatsApp 3 días antes</strong> de cobrar y despachar el pedido. Recibirás un enlace rápido para aplazar o adelantar.
+              </span>
+</label>
+<!-- Flexibility Guarantee -->
+<div class="flex items-start gap-2 pt-2 border-t border-outline-variant/30 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">shield</span>
+<p class="font-body-sm text-body-sm">
+<strong>Sin contratos ni penalizaciones:</strong> Pausa, cambia fecha, modifica productos o cancela en cualquier momento con un solo clic desde tu panel de usuario.
+              </p>
+</div>
+</div>
+</section>
+<!-- COUPON CODE MODULE -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 custom-warm-shadow">
+<label class="block font-headline-sm text-headline-sm text-on-surface font-bold mb-2" for="coupon-input">Cupón de Descuento</label>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+<div class="relative flex-grow">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-primary">
+<span class="material-symbols-outlined text-[20px]">sell</span>
+</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container rounded-lg border border-outline-variant font-body-md text-body-md font-bold text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none uppercase tracking-wide" id="coupon-input" type="text" value="BIENVENIDOMAX"/>
+</div>
+<button class="px-5 py-2.5 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg font-bold transition-colors active:scale-95 duration-150 shrink-0" type="button">
+              Aplicar otro código
+            </button>
+</div>
+<!-- Applied Coupon Feedback Badge -->
+<div class="mt-3 flex items-center justify-between bg-primary-fixed/40 border border-primary-fixed-dim px-3.5 py-2 rounded-lg text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md font-bold">Cupón 'BIENVENIDOMAX' aplicado exitosamente (-$100 MXN)</span>
+</div>
+<button aria-label="Remover cupón" class="text-on-surface-variant hover:text-error text-body-sm font-label-md underline" type="button">
+              Quitar
+            </button>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN: 35% STICKY ORDER SUMMARY (4 of 12 cols) -->
+<aside class="lg:col-span-4 sticky top-20">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/60 custom-floating-shadow flex flex-col gap-space-md">
+<div class="border-b border-outline-variant/40 pb-3">
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Resumen del Pedido</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Precios expresados en moneda nacional (MXN)</p>
+</div>
+<!-- Price Line Items -->
+<div class="space-y-2.5 font-body-md text-body-md">
+<div class="flex justify-between text-on-surface">
+<span>Subtotal productos (2)</span>
+<span class="font-semibold">$1,353 MXN</span>
+</div>
+<div class="flex justify-between text-primary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+                Descuento Auto-Envío (15%)
+              </span>
+<span class="font-bold">-$207 MXN</span>
+</div>
+<div class="flex justify-between text-primary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sell</span>
+                Cupón Bienvenida Max
+              </span>
+<span class="font-bold">-$100 MXN</span>
+</div>
+<div class="flex justify-between text-on-surface">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+                Costo de envío
+              </span>
+<span class="font-bold text-primary">Gratis ($0 MXN)</span>
+</div>
+<!-- Savings Highlight Callout -->
+<div class="p-2.5 bg-primary/10 rounded-lg text-primary text-center font-label-md text-label-md font-bold mt-2">
+              🎉 ¡Ahorraste $307 MXN en esta orden!
+            </div>
+</div>
+<div class="border-t border-outline-variant/40 pt-3">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Total a pagar:</span>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg font-extrabold text-primary">$1,046 MXN</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">IVA incluido</span>
+</div>
+</div>
+</div>
+<!-- PRIMARY ACTION BUTTON: Secondary Terracotta Pill -->
+<button class="w-full h-[52px] bg-secondary hover:bg-secondary/90 text-on-secondary rounded-full font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] duration-150 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Proceder al Pago Seguro</span>
+</button>
+<!-- Accepted Payment Methods -->
+<div class="pt-2 text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-2">Métodos de pago aceptados:</p>
+<div class="flex items-center justify-center gap-2 flex-wrap text-outline">
+<span class="px-2 py-1 bg-surface-container rounded font-bold text-[11px] border border-outline-variant/40">Apple Pay</span>
+<span class="px-2 py-1 bg-surface-container rounded font-bold text-[11px] border border-outline-variant/40">Visa</span>
+<span class="px-2 py-1 bg-surface-container rounded font-bold text-[11px] border border-outline-variant/40">Mastercard</span>
+<span class="px-2 py-1 bg-surface-container rounded font-bold text-[11px] border border-outline-variant/40">PayPal</span>
+<span class="px-2 py-1 bg-surface-container rounded font-bold text-[11px] border border-outline-variant/40">MercadoPago</span>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="pt-3 border-t border-outline-variant/40 space-y-2">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span>Compra protegida con cifrado bancario 256-bit SSL</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">published_with_changes</span>
+<span>Garantía de satisfacción total o devolución íntegra</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">medical_services</span>
+<span>Asesoría veterinaria y seguimiento incluidos</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- NUTRITIONAL GUARANTEE BENTO STRIP -->
+<section class="mt-space-xl grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/40 custom-warm-shadow flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">eco</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Ingredientes 100% Grado Humano</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Carne real y verduras frescas de granjas locales sin subproductos ni harinas.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/40 custom-warm-shadow flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">ac_unit</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Cadena de Frío Controlada</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Empaques aislados con hielo seco ecológico para frescura garantizada hasta tu puerta.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/40 custom-warm-shadow flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Línea Veterinaria Directa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Consulta ajustes de ración y transición digestiva con nuestros médicos de cabecera.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- SHARED FOOTER (Comprehensive Desktop) -->
+<footer class="w-full px-margin py-space-xl mt-auto bg-surface-container dark:bg-surface-container-highest text-on-surface dark:text-on-surface border-t border-outline-variant dark:border-outline">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-lg mb-space-xl">
+<!-- Brand Column -->
+<div class="md:col-span-2 space-y-3">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[26px]" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span>NutriCan</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+            Nutrición canina con respaldo veterinario y formulaciones naturales preparadas en porciones exactas para que tu perro viva más y mejor.
+          </p>
+<div class="pt-2 flex items-center gap-3">
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">call</span>
+              800-NUTRI-CAN
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">mail</span>
+              veterinaria@nutrican.mx
+            </span>
+</div>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary font-bold mb-3">Planes &amp; Dietas</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Catálogo Completo</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Planes Personalizados</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Calculadora de Calorías</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Guías Nutricionales</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary font-bold mb-3">Atención &amp; Envíos</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Preguntas Frecuentes</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Suscripción y Envíos</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Políticas de Devolución</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Aviso Legal y Privacidad</a></li>
+</ul>
+</div>
+<!-- Links Column 3 -->
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary font-bold mb-3">Filosofía</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Compromiso Veterinario</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Sostenibilidad e Ingredientes</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright Sub-Footer -->
+<div class="pt-space-md border-t border-outline-variant/40 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant">
+<p>© 2024 NutriCan Canine Nutrition S.L. Nutrición veterinaria holística y balanceada. Todos los derechos reservados.</p>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">eco</span>
+            Empaque 100% Compostable
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">favorite</span>
+            Hecho con amor canino
+          </span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
+
+<!-- NutriCan - Detalle de Producto Desktop -->
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NutriCan Premium Grain-Free Salmon &amp; Camote | NutriCan</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config directly from Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#11462d",
+            "on-surface": "#1e1b18",
+            "surface-dim": "#e0d9d4",
+            "secondary": "#a33d23",
+            "surface-bright": "#fff8f4",
+            "on-tertiary-container": "#eac56b",
+            "on-surface-variant": "#414943",
+            "on-background": "#1e1b18",
+            "on-primary-fixed-variant": "#1d5036",
+            "secondary-fixed-dim": "#ffb4a2",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#9dd3b0",
+            "surface-container-highest": "#e8e1dc",
+            "on-tertiary-fixed": "#251a00",
+            "inverse-primary": "#9dd3b0",
+            "secondary-fixed": "#ffdad2",
+            "tertiary-fixed": "#ffdf96",
+            "tertiary-container": "#6a5100",
+            "on-secondary-container": "#731a04",
+            "tertiary-fixed-dim": "#e7c268",
+            "surface-tint": "#36684c",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#002111",
+            "inverse-surface": "#33302d",
+            "tertiary": "#4e3b00",
+            "surface-variant": "#e8e1dc",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c0c9c0",
+            "inverse-on-surface": "#f7efea",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#a0d5b3",
+            "on-secondary-fixed-variant": "#83260e",
+            "surface-container-low": "#faf2ed",
+            "surface-container-high": "#eee7e2",
+            "primary-fixed": "#b8efcc",
+            "background": "#fff8f4",
+            "on-error-container": "#93000a",
+            "surface": "#fff8f4",
+            "primary-container": "#2c5e43",
+            "secondary-container": "#ff8162",
+            "on-tertiary-fixed-variant": "#5a4400",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#3c0700",
+            "outline": "#717972",
+            "surface-container": "#f4ece7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- ========================================== -->
+<!-- SHARED TOP NAV BAR (Desktop Full)          -->
+<!-- ========================================== -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-margin py-space-sm w-full bg-surface-container-lowest dark:bg-surface shadow-sm dark:shadow-none">
+<!-- Brand Anchor & Search -->
+<div class="flex items-center gap-space-lg">
+<a class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight" href="#">
+        NutriCan
+      </a>
+<!-- Search on Left (from JSON schema: search_bar: "on_left") -->
+<div class="relative hidden lg:block w-72">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full pl-10 pr-4 py-2 text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Buscar alimento, recetas o suplementos..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links -->
+<!-- Nav Active state mapped to 'Catálogo' since we are in Product Detail View under catalog flow -->
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 font-label-lg text-label-lg" href="#">
+        Catálogo
+      </a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+        Planes de Suscripción
+      </a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+        Calculadora Nutricional
+      </a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+        Blog Veterinario
+      </a>
+</nav>
+<!-- Trailing Actions & Profile -->
+<div class="flex items-center gap-space-md">
+<!-- Pet Profile Affinity Pill -->
+<div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant hover:border-primary transition-colors cursor-pointer">
+<img alt="Foto de perfil de Max, un Golden Retriever" class="w-7 h-7 rounded-full object-cover ring-2 ring-primary" data-alt="Close-up portrait of a cheerful, healthy Golden Retriever named Max with a shining golden coat bathed in natural warm sunlight outdoors on a lush green meadow, expressing holistic canine wellness in clean modern light-mode photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuqaMQ--nSVJ8uuZdvE4sDmEzPJ-NWyydFqSs9_AXlfgiz2_jxeR10zlluSRLwuSDrtNmRV2TVVcMy3u7TopB9Kp2lP5NfAc1HYXbBWHU1lXxOYRjbiRAia2wEQv3Ky6f10_T-t9TresucEG-9RTBnUq4Fa_s-KagYm2RccMHYgs6lMdqeXLFJnGtv91TSbClx97OElS-I3psy06TGexVXoL9IXAhJG5DtnOwvxqGIVKIbI7dJIA3S"/>
+<span class="font-label-md text-label-md text-primary font-bold hidden sm:inline">Max - Golden Retriever</span>
+</div>
+<!-- Account Button -->
+<button class="hidden sm:inline-flex text-on-surface font-label-lg text-label-lg hover:text-primary transition-colors px-2 py-1">
+        Mi Cuenta
+      </button>
+<!-- Cart Icon Action -->
+<button aria-label="Carrito de compras" class="relative p-2 rounded-full hover:bg-surface-container text-on-surface transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+<span class="absolute top-1 right-1 bg-secondary text-on-secondary text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">1</span>
+</button>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- BREADCRUMBS                                -->
+<!-- ========================================== -->
+<div class="w-full max-w-7xl mx-auto px-margin pt-space-md pb-space-xs">
+<nav class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm overflow-x-auto whitespace-nowrap">
+<a class="hover:text-primary transition-colors" href="#">Inicio</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Catálogo</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Alimento Seco</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">NutriCan Premium Salmón &amp; Camote</span>
+</nav>
+</div>
+<!-- ========================================== -->
+<!-- MAIN PDP CONTAINER (2-Column Desktop Grid) -->
+<!-- ========================================== -->
+<main class="w-full max-w-7xl mx-auto px-margin py-space-md flex-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- ======================================== -->
+<!-- LEFT COLUMN (60% -> col-span-7)          -->
+<!-- ======================================== -->
+<section class="lg:col-span-7 space-y-space-xl">
+<!-- Gallery & Product Hero Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 shadow-[0px_4px_16px_-2px_rgba(44,94,67,0.06)]">
+<!-- Main Hero Image Display -->
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-low flex items-center justify-center">
+<img alt="Bolsa NutriCan Premium Grain-Free Salmon &amp; Camote" class="w-full h-full object-contain p-4 transition-transform duration-300 hover:scale-105" data-alt="Premium packaging of NutriCan Grain-Free Salmon and Camote dog food bag standing upright in a clean modern kitchen with fresh organic salmon fillet, sweet potatoes, and leafy sage herbs artistically placed nearby in bright natural daylight." id="main-product-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDkGZcdj2ykd9sj6G3C6q1IVYPa52wSkABqYwRn_dcEQmQBCVRjunZIS5DI-LkmkinGteyELozacogiGHx8y8gPLLbSgHUrZxhWlIpa8C6VNsv66kBdM1LarCgcJdJBhf-91vzqV1iJ45_-706C6sRqP_h4yndwwMNOj39FcKE965ALogIB3D5SYpfcCutGD4GnPIpcWTC7D-eY5Nw5uk1U4MzNvafI_E1f9x4wx4B7oM8xAk_wdIY"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                Fórmula Veterinaria
+              </span>
+<span class="bg-secondary text-on-secondary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold shadow-sm">
+                -15% en Auto-Envío
+              </span>
+</div>
+<button class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md p-2 rounded-full border border-outline-variant hover:text-primary transition-colors text-on-surface-variant" title="Ver en 360 grados">
+<span class="material-symbols-outlined text-[20px]">360</span>
+</button>
+</div>
+<!-- Thumbnail Gallery Switcher -->
+<div class="grid grid-cols-4 gap-space-sm mt-space-md">
+<button class="aspect-square rounded-lg border-2 border-primary overflow-hidden bg-surface-container-low p-1.5 focus:outline-none transition-all">
+<img alt="Vista frontal empaque" class="w-full h-full object-contain" data-alt="Crisp studio photograph displaying the frontal view of NutriCan Premium Grain-Free Salmon bag showing vibrant organic branding, nutritional badges, and clinical veterinary approval stamp against an oat neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuYNWJUOv3QO-O5kFx05YZqDvOsWuwBNjwe6bmN8zJ7yIa8GQcBvGILsehUxfNyZRrWV9I3A4BIgeduQ7sY9Rwje3wwaGquT-mMlSwIESRqDIis1wi169RXJ7ZtFPTy1A2ms53qEpAHGk-Jy6xdghD_YdVNBr8B72kEd1VSmBCPQZivjziaHMRrYKuOkmZ_RvE8iE3a747uE-igwW9gJBP0uAXnRsSM92-wFm9dg1FxaUK4bKXf2wO"/>
+</button>
+<button class="aspect-square rounded-lg border border-outline-variant hover:border-primary overflow-hidden bg-surface-container-low p-1.5 focus:outline-none transition-all">
+<img alt="Textura de la croqueta" class="w-full h-full object-cover rounded" data-alt="Extreme macro close-up view of heart-shaped dry dog kibble showing dense, crunchy, nutrient-rich brown texture with visible natural fibers, salmon oil sheen, and botanical flecks under soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTH8-rA_n2JoOpDtNYLoWEEbYTihI5Fsd97PEO5MxYLM4WOZeE2BAM0CZe5_YuC6PQPTaosCVXCziBA0LGvuUuZMKhT5XOOwBb4ti5VBETzptPCyMlHUah3z6Dda7jNekL3xlOSoIp0-HmgLghPVl-DS1s88u-v6GgDD9M7n8o2_G8Qw5dPRK2yDgjqeBYHWPcQlL8Vu_tGMy_sy4HT-R1sMRVSc87nV-4DASilqW6veVchIwb1gIe"/>
+</button>
+<button class="aspect-square rounded-lg border border-outline-variant hover:border-primary overflow-hidden bg-surface-container-low p-1.5 focus:outline-none transition-all">
+<img alt="Ingredientes frescos naturales" class="w-full h-full object-cover rounded" data-alt="Editorial overhead flat-lay of wild Pacific salmon fillet, roasted sweet potato wedges, fresh rosemary sprigs, blueberries, and flaxseeds cleanly arranged on raw parchment paper with wholesome earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeL6rkNLEHncn82BYmqRPNxQ47Noc6cwtYszq2AsGFPm2j2dCXMJcvv7hWNI4T-dOvdpSZcgCiDNJEjzbQHfEkd0rsP0AZFcdsBFt0dWLXSV0yXfMRZ2OE7xpWfq032bGfL_5UaVA2ZwdYKLmUmbuB4eVpQSbXibQRjHpvo-I24I_kgIXcgNhXhlXxiXxSy-gTveHwt-FljkoEpvxSkXC7Ge0hySjf-ArXIThjLwhkIeVtH1zRJRxu"/>
+</button>
+<button class="aspect-square rounded-lg border border-outline-variant hover:border-primary overflow-hidden bg-surface-container-low p-1.5 focus:outline-none transition-all flex flex-col items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">verified</span>
+<span class="font-label-sm text-label-sm mt-1 text-center font-bold">Certificado Vet</span>
+</button>
+</div>
+</div>
+<!-- PET AFFINITY BANNER (Personalized for Max) -->
+<div class="bg-primary-container text-on-primary rounded-xl p-space-md flex items-center justify-between shadow-[0px_4px_16px_-2px_rgba(44,94,67,0.15)] relative overflow-hidden">
+<div class="flex items-center gap-space-md z-10">
+<div class="relative">
+<img alt="Max Golden Retriever" class="w-14 h-14 rounded-full object-cover border-2 border-on-primary shadow-md" data-alt="Portrait of Max the Golden Retriever wearing a sage green collar, smiling with tongue out against warm sunlight, signaling peak health, vitality, and canine happiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjkBS8RRC0TsChrN_Dqstweh7OfK0tZ9qI3JBd9ydIJzmQwGhRCt3__EXuX16I0AtUStHp-l2Jv2vWYm_cVUZ_21fx3Fc1trOb-nVjHHhiL1RGcTOOdkkF61QIajyQKwgNyXoW98o2C9WASzo3_j0bLKJWIYLC-ekfMTWfDjix3GDRdO19PG12GinlWqMvGfT7W7exG-MfBL5kOVo7Yh2ykUA3OyY2wHJh7OiVXi5KD4_m-W7C0t0t"/>
+<span class="absolute -bottom-1 -right-1 bg-on-tertiary-container text-tertiary font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center border border-on-primary">
+                ★
+              </span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-surface-bright font-bold">Recomendado para Max</span>
+<span class="bg-surface-tint/60 text-surface-bright font-label-sm text-label-sm px-2 py-0.5 rounded-full">
+                  Golden Retriever • 4 años
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-0.5">
+                Su necesidad energética moderada y articulaciones requieren Omega-3 alto y glucosamina.
+              </p>
+</div>
+</div>
+<div class="hidden sm:flex flex-col items-end z-10 pl-4 border-l border-on-primary-fixed-variant">
+<span class="font-headline-lg text-headline-lg font-extrabold text-on-tertiary-container">98%</span>
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase">Match Nutricional</span>
+</div>
+<!-- Ambient decorative pattern overlay -->
+<div class="absolute -right-8 -bottom-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[130px]">pets</span>
+</div>
+</div>
+<!-- EXPANSIVE SECTION: CLINICAL BENEFITS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/60 shadow-[0px_4px_16px_-2px_rgba(44,94,67,0.06)]">
+<div class="flex items-center gap-2 mb-space-md">
+<span class="material-symbols-outlined text-primary text-[26px]">medical_services</span>
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Beneficios Clínicos Probados</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+            Formulado rigurosamente bajo directrices FEDIAF y AAFCO para optimizar longevidad celular, agilidad motriz y salud gastrointestinal.
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Benefit 1 -->
+<div class="bg-surface-container-low p-space-md rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">accessible_forward</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">Salud Articular Avanzada</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Infusión clínica de <strong class="text-primary font-semibold">Glucosamina (750 mg/kg)</strong> y <strong class="text-primary font-semibold">Condroitina</strong> que protegen cartílagos en razas grandes.
+                </p>
+</div>
+<div class="mt-4 pt-2 border-t border-outline-variant/30 text-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Eficacia en 21 días
+              </div>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-surface-container-low p-space-md rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-secondary/10 text-secondary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">Pelaje Brillante y Piel Sana</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Rico en ácidos grasos marinos <strong class="text-secondary font-semibold">Omega 3 y 6</strong> del salmón silvestre que reducen prurito, alergias dérmicas y caída de pelo.
+                </p>
+</div>
+<div class="mt-4 pt-2 border-t border-outline-variant/30 text-secondary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Brillo sedoso comprobado
+              </div>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-surface-container-low p-space-md rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 text-tertiary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">vital_signs</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">Fácil Digestión &amp; Microbioma</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Camote como carbohidrato de bajo índice glucémico y <strong class="text-tertiary font-semibold">Prebióticos FOS &amp; MOS</strong> para heces firmes y menor flatulencia.
+                </p>
+</div>
+<div class="mt-4 pt-2 border-t border-outline-variant/30 text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> 100% Libre de Granos
+              </div>
+</div>
+</div>
+</div>
+<!-- SPECIALIZED COMPONENT: NUTRITION RING & GUARANTEED ANALYSIS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/60 shadow-[0px_4px_16px_-2px_rgba(44,94,67,0.06)]">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Análisis Garantizado</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Certificación bromatológica en base seca por kilogramo.</p>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-3 py-1 rounded-full text-on-surface-variant font-medium">
+              Laboratorio Vet Certificado
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-center">
+<!-- Canine Nutrition Ring Visual Tracker -->
+<div class="md:col-span-4 flex flex-col items-center justify-center p-space-md bg-surface-container-low rounded-xl">
+<div class="relative w-36 h-36 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#F3EFEA" stroke-width="12"></circle>
+<!-- Protein Arc (Sage Forest #2c5e43) -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#2c5e43" stroke-dasharray="251.2" stroke-dashoffset="180" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Fat Arc (Terracotta #a33d23) -->
+<circle class="origin-center rotate-45" cx="50" cy="50" fill="transparent" r="40" stroke="#a33d23" stroke-dasharray="251.2" stroke-dashoffset="210" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Fiber & Veggies Arc (Amber #6a5100) -->
+<circle class="origin-center rotate-90" cx="50" cy="50" fill="transparent" r="40" stroke="#6a5100" stroke-dasharray="251.2" stroke-dashoffset="238" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">3,720</span>
+<span class="text-[10px] text-on-surface-variant font-semibold uppercase leading-tight">kcal/kg EM</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-bold">Balance Metabólico Óptimo</span>
+</div>
+<!-- Progress Bars Table -->
+<div class="md:col-span-8 space-y-3.5">
+<!-- Item 1: Proteina -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container inline-block"></span>
+                    Proteína Bruta (Mín.)
+                  </span>
+<span class="font-bold text-primary">28.0%</span>
+</div>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 78%;"></div>
+</div>
+<div class="text-[11px] text-outline mt-0.5 flex justify-between">
+<span>Requerimiento adulto: 18%</span>
+<span class="text-primary font-medium">+55% superávit de calidad</span>
+</div>
+</div>
+<!-- Item 2: Grasa -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary inline-block"></span>
+                    Grasa Cruda (Mín.)
+                  </span>
+<span class="font-bold text-secondary">16.0%</span>
+</div>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 55%;"></div>
+</div>
+<div class="text-[11px] text-outline mt-0.5">
+<span>Ácidos esenciales DHA &amp; EPA de origen marino</span>
+</div>
+</div>
+<!-- Item 3: Fibra -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary inline-block"></span>
+                    Fibra Cruda (Máx.)
+                  </span>
+<span class="font-bold text-tertiary">4.0%</span>
+</div>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Item 4: Humedad -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-outline inline-block"></span>
+                    Humedad (Máx.)
+                  </span>
+<span class="font-bold text-on-surface">10.0%</span>
+</div>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 30%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FEEDING GUIDE SECTION -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/60 shadow-[0px_4px_16px_-2px_rgba(44,94,67,0.06)]">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Guía de Ración Diaria Recomendada</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Porciones ajustadas según peso corporal y nivel de actividad.</p>
+</div>
+<span class="material-symbols-outlined text-outline text-[24px]">scale</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low text-on-surface font-title-md">
+<th class="py-3 px-4 rounded-l-lg font-bold">Peso del Perro</th>
+<th class="py-3 px-4 font-bold">Actividad Baja (&lt;1h/día)</th>
+<th class="py-3 px-4 font-bold bg-primary/5 text-primary">Actividad Moderada (Max)</th>
+<th class="py-3 px-4 rounded-r-lg font-bold">Alta Energía (&gt;2h/día)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/40">
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-4 font-semibold">10 - 15 kg</td>
+<td class="py-3 px-4 text-on-surface-variant">140 - 190 g</td>
+<td class="py-3 px-4 bg-primary/5 font-semibold text-primary">160 - 220 g</td>
+<td class="py-3 px-4 text-on-surface-variant">190 - 260 g</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-4 font-semibold">15 - 25 kg</td>
+<td class="py-3 px-4 text-on-surface-variant">190 - 280 g</td>
+<td class="py-3 px-4 bg-primary/5 font-semibold text-primary">220 - 330 g</td>
+<td class="py-3 px-4 text-on-surface-variant">260 - 390 g</td>
+</tr>
+<!-- Highlighted row for Max: Golden Retriever approx 30kg -->
+<tr class="bg-primary/10 font-bold border-l-4 border-primary">
+<td class="py-3.5 px-4 text-primary flex items-center gap-1.5">
+<span>25 - 35 kg</span>
+<span class="bg-primary text-on-primary text-[10px] px-1.5 py-0.5 rounded font-bold">MAX</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface">280 - 365 g</td>
+<td class="py-3.5 px-4 text-primary bg-primary/15 font-extrabold">330 - 430 g / día</td>
+<td class="py-3.5 px-4 text-on-surface">390 - 510 g</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-4 font-semibold">35 - 45 kg</td>
+<td class="py-3 px-4 text-on-surface-variant">365 - 440 g</td>
+<td class="py-3 px-4 bg-primary/5 font-semibold text-primary">430 - 520 g</td>
+<td class="py-3 px-4 text-on-surface-variant">510 - 615 g</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-[11px] text-outline mt-3 italic">
+            *Servir en 2 tomas diarias. Mantener siempre agua fresca y limpia disponible.
+          </p>
+</div>
+<!-- REVIEWS SECTION -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/60 shadow-[0px_4px_16px_-2px_rgba(44,94,67,0.06)]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-space-md border-b border-outline-variant/50">
+<div>
+<div class="flex items-center gap-3">
+<span class="font-display-lg text-display-lg font-extrabold text-primary">4.9</span>
+<div>
+<div class="flex text-on-tertiary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">428 opiniones verificadas</span>
+</div>
+</div>
+</div>
+<button class="px-4 py-2 rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">rate_review</span>
+              Escribir Opinión
+            </button>
+</div>
+<!-- Reviews List -->
+<div class="mt-space-md space-y-space-md">
+<!-- Review 1: Laura G. (Dueña de Max) -->
+<div class="p-space-md bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center">
+                    LG
+                  </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-bold text-on-surface">Laura G.</span>
+<span class="bg-primary/10 text-primary text-[11px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified</span> Compradora Verificada
+                      </span>
+</div>
+<span class="text-xs text-outline font-medium">Dueña de Max (Golden Retriever, 4 años) • Hace 5 días</span>
+</div>
+</div>
+<div class="flex text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                "El cambio en el pelaje de Max fue radical a las dos semanas. Antes sufría de resequedad y comezón continua en el lomo. Le encanta el sabor a salmón y el sistema de suscripción mensual es una tranquilidad enorme, siempre llega puntual."
+              </p>
+<div class="mt-3 flex items-center gap-2 text-outline font-label-sm text-label-sm">
+<span>¿Te resultó útil?</span>
+<button class="hover:text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">thumb_up</span> (24)
+                </button>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-space-md bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary/20 text-secondary font-bold flex items-center justify-center">
+                    DR
+                  </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-bold text-on-surface">Dr. Roberto Mendoza</span>
+<span class="bg-primary-container text-on-primary text-[11px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">stethoscope</span> MVZ Especialista
+                      </span>
+</div>
+<span class="text-xs text-outline font-medium">Médico Veterinario • Hace 2 semanas</span>
+</div>
+</div>
+<div class="flex text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                "Excelente perfil de aminoácidos y balance calcio-fósforo. Recomiendo esta fórmula de NutriCan a pacientes con intolerancias digestivas a harinas de subproductos avícolas o cereales refinados."
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================== -->
+<!-- RIGHT COLUMN (40% Sticky Buy Box)        -->
+<!-- ======================================== -->
+<aside class="lg:col-span-5 sticky top-20">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant shadow-[0px_12px_32px_-4px_rgba(44,94,67,0.10)] space-y-space-md">
+<!-- Badges Cluster -->
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary font-bold px-2.5 py-1 rounded-full">
+              100% Ingredientes Naturales
+            </span>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-bold px-2.5 py-1 rounded-full">
+              Sin Granos
+            </span>
+<span class="font-label-sm text-label-sm bg-secondary/10 text-secondary font-bold px-2.5 py-1 rounded-full">
+              Proteína Marina
+            </span>
+</div>
+<!-- Product Title & Target Canine Group -->
+<div>
+<h1 class="font-headline-lg text-headline-lg font-extrabold text-on-surface leading-tight">
+              NutriCan Premium Grain-Free Salmon &amp; Camote
+            </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Perros adultos medianos y grandes • Nutrición Holística Avanzada
+            </p>
+</div>
+<!-- Rating & Reviews Anchor -->
+<div class="flex items-center gap-2">
+<div class="flex text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="text-outline text-xs">•</span>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-semibold" href="#reviews">
+              428 opiniones verificadas
+            </a>
+</div>
+<!-- Dynamic Price Display -->
+<div class="pt-2 border-t border-outline-variant/50">
+<div class="flex items-baseline gap-3">
+<span class="font-display-lg text-display-lg font-extrabold text-secondary">
+                $1,173 MXN
+              </span>
+<span class="text-body-md line-through text-outline">
+                $1,380 MXN
+              </span>
+<span class="bg-secondary/15 text-secondary text-xs font-extrabold px-2 py-0.5 rounded-full">
+                Ahorra 15%
+              </span>
+</div>
+<p class="text-xs text-outline mt-0.5 font-medium">
+              $97.75/kg con suscripción • Impuestos incluidos
+            </p>
+</div>
+<!-- Bag Size Selector Cards -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md font-bold text-on-surface">
+              Seleccionar Presentación:
+            </label>
+<div class="grid grid-cols-3 gap-2">
+<!-- 3kg -->
+<button class="p-2.5 rounded-xl border border-outline-variant hover:border-primary text-center transition-all bg-surface-container-low" type="button">
+<span class="block font-label-lg text-label-lg font-bold text-on-surface">3 kg</span>
+<span class="block text-xs text-on-surface-variant font-medium mt-0.5">$450</span>
+</button>
+<!-- 12kg (Selected) -->
+<button class="relative p-2.5 rounded-xl border-2 border-primary bg-primary/5 text-center transition-all ring-1 ring-primary" type="button">
+<span class="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[9px] font-extrabold px-2 py-0.2 rounded-full uppercase tracking-wider">
+                  Más Popular
+                </span>
+<span class="block font-label-lg text-label-lg font-bold text-primary">12 kg</span>
+<span class="block text-xs text-primary font-bold mt-0.5">$1,173</span>
+</button>
+<!-- 15kg -->
+<button class="p-2.5 rounded-xl border border-outline-variant hover:border-primary text-center transition-all bg-surface-container-low" type="button">
+<span class="block font-label-lg text-label-lg font-bold text-on-surface">15 kg</span>
+<span class="block text-xs text-on-surface-variant font-medium mt-0.5">$1,450</span>
+</button>
+</div>
+</div>
+<!-- Purchase Mode Selection Cards -->
+<div class="space-y-3 pt-2">
+<label class="block font-label-md text-label-md font-bold text-on-surface">
+              Modalidad de Compra:
+            </label>
+<!-- Option 1: Suscripcion Auto-Envio (Selected) -->
+<div class="border-2 border-primary rounded-xl p-space-md bg-surface-container-low/60 relative cursor-pointer transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-2.5">
+<input checked="" class="mt-1 text-primary focus:ring-primary w-4 h-4" id="sub" name="purchase_mode" type="radio"/>
+<label class="cursor-pointer" for="sub">
+<span class="font-title-md text-title-md font-bold text-primary block leading-tight">
+                      Suscripción Auto-Envío
+                    </span>
+<span class="text-xs text-secondary font-bold block mt-0.5">
+                      Ahorra 15% en cada entrega recurrente
+                    </span>
+</label>
+</div>
+<span class="font-title-md text-title-md font-extrabold text-on-surface">
+                  $1,173 <span class="text-[10px] font-normal text-on-surface-variant">MXN</span>
+</span>
+</div>
+<!-- Frequency Dropdown -->
+<div class="mt-3 pl-6 space-y-1.5">
+<label class="text-[11px] font-bold text-on-surface-variant block uppercase tracking-wider">
+                  Frecuencia de Reposición:
+                </label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg text-body-sm font-body-sm font-semibold text-primary py-2 px-3 focus:outline-none focus:border-primary">
+<option selected="">Cada 4 semanas (Recomendado para Max, 12kg)</option>
+<option>Cada 3 semanas</option>
+<option>Cada 6 semanas</option>
+<option>Cada 8 semanas</option>
+</select>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-primary font-medium mt-1">
+<span class="material-symbols-outlined text-[14px]">event_repeat</span>
+<span>Pausa, ajusta o cancela en un clic desde tu cuenta</span>
+</div>
+</div>
+</div>
+<!-- Option 2: Compra Unica -->
+<div class="border border-outline-variant rounded-xl p-space-md bg-surface-container-lowest hover:border-outline cursor-pointer transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-2.5">
+<input class="mt-1 text-primary focus:ring-primary w-4 h-4" id="one_time" name="purchase_mode" type="radio"/>
+<label class="cursor-pointer" for="one_time">
+<span class="font-title-md text-title-md font-semibold text-on-surface block leading-tight">
+                      Compra Única
+                    </span>
+<span class="text-xs text-on-surface-variant block mt-0.5">
+                      Sin cargos programados
+                    </span>
+</label>
+</div>
+<span class="font-title-md text-title-md font-bold text-on-surface">
+                  $1,380 <span class="text-[10px] font-normal text-on-surface-variant">MXN</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Quantity Selector & Actions -->
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3">
+<!-- Stepper -->
+<div class="flex items-center border border-outline-variant rounded-full bg-surface-container-low px-2 py-1">
+<button aria-label="Disminuir cantidad" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container-lowest text-on-surface font-bold text-base transition-colors" type="button">
+                  -
+                </button>
+<span class="w-10 text-center font-bold text-body-md text-on-surface">1</span>
+<button aria-label="Aumentar cantidad" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container-lowest text-on-surface font-bold text-base transition-colors" type="button">
+                  +
+                </button>
+</div>
+<!-- Primary CTA: Agregar al Carrito (Secondary Terracotta filled, pill-shaped) -->
+<button class="flex-1 h-[52px] bg-secondary hover:bg-on-secondary-container text-on-secondary font-label-lg text-label-lg font-bold rounded-full transition-transform active:scale-95 duration-150 flex items-center justify-center gap-2 shadow-[0px_4px_16px_-2px_rgba(163,61,35,0.3)]">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+<span>Agregar al Carrito</span>
+</button>
+</div>
+<!-- Secondary 1-Click Buy Action (Outlined Forest Sage) -->
+<button class="w-full h-[52px] border-[1.5px] border-primary text-primary hover:bg-primary/5 font-label-lg text-label-lg font-bold rounded-full transition-transform active:scale-95 duration-150 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>Comprar en 1-Clic con Suscripción</span>
+</button>
+</div>
+<!-- Shipping Promise & Veterinary Guarantees -->
+<div class="space-y-2 pt-3 border-t border-outline-variant/60">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<span><strong class="text-on-surface font-semibold">Envío gratis</strong> a todo el país • Entrega en 24-48 hrs</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<span>Sello de garantía veterinaria y satisfacción 100% garantizada</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">lock</span>
+<span>Transacción cifrada y pago seguro de nivel bancario</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- ========================================== -->
+<!-- SHARED FOOTER (Comprehensive Desktop)      -->
+<!-- ========================================== -->
+<footer class="w-full px-margin py-space-xl mt-auto bg-surface-container dark:bg-surface-container-highest text-on-surface dark:text-on-surface border-t border-outline-variant dark:border-outline">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-space-xl mb-space-lg">
+<!-- Brand & Mission Column -->
+<div class="md:col-span-1 space-y-space-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary block">
+          NutriCan
+        </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant leading-relaxed">
+          Ciencia veterinaria aplicada a la nutrición canina integral. Fórmulas holísticas sin granos desarrolladas para extender la vitalidad y longevidad de tu perro.
+        </p>
+<div class="flex items-center gap-2 text-primary font-bold font-label-md text-label-md pt-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Avalado por Médicos Veterinarios</span>
+</div>
+</div>
+<!-- Footer Column 1: Nutrition & Catalog -->
+<div class="space-y-space-xs">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-primary dark:text-inverse-primary mb-2">
+          Nutrición Canina
+        </h4>
+<ul class="space-y-2">
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Catálogo Completo
+            </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Planes Personalizados
+            </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Calculadora de Calorías
+            </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Guías Nutricionales
+            </a>
+</li>
+</ul>
+</div>
+<!-- Footer Column 2: Assistance & Policies -->
+<div class="space-y-space-xs">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-primary dark:text-inverse-primary mb-2">
+          Atención y Envíos
+        </h4>
+<ul class="space-y-2">
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Preguntas Frecuentes
+            </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Suscripción y Envíos
+            </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Políticas de Devolución
+            </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Aviso Legal y Privacidad
+            </a>
+</li>
+</ul>
+</div>
+<!-- Footer Column 3: Trust & Ingredients -->
+<div class="space-y-space-xs">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-primary dark:text-inverse-primary mb-2">
+          Compromiso
+        </h4>
+<ul class="space-y-2">
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Compromiso Veterinario
+            </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">
+              Sostenibilidad e Ingredientes
+            </a>
+</li>
+</ul>
+<div class="pt-3">
+<span class="font-label-sm text-label-sm text-outline uppercase font-bold tracking-wider block mb-1">Contacto Directo</span>
+<span class="font-body-sm text-body-sm text-primary font-semibold">soporte@nutrican.com</span>
+</div>
+</div>
+</div>
+<!-- Copyright and Legal Baseline -->
+<div class="max-w-7xl mx-auto pt-space-md border-t border-outline-variant/60 dark:border-outline text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant">
+        © 2024 NutriCan Canine Nutrition S.L. Nutrición veterinaria holística y balanceada. Todos los derechos reservados.
+      </p>
+</div>
+</footer>
+</body></html>
+
+<!-- NutriCan - Perfil Nutricional Desktop -->
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil Nutricional de Max - NutriCan</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Play CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#11462d",
+            "on-surface": "#1e1b18",
+            "surface-dim": "#e0d9d4",
+            "secondary": "#a33d23",
+            "surface-bright": "#fff8f4",
+            "on-tertiary-container": "#eac56b",
+            "on-surface-variant": "#414943",
+            "on-background": "#1e1b18",
+            "on-primary-fixed-variant": "#1d5036",
+            "secondary-fixed-dim": "#ffb4a2",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#9dd3b0",
+            "surface-container-highest": "#e8e1dc",
+            "on-tertiary-fixed": "#251a00",
+            "inverse-primary": "#9dd3b0",
+            "secondary-fixed": "#ffdad2",
+            "tertiary-fixed": "#ffdf96",
+            "tertiary-container": "#6a5100",
+            "on-secondary-container": "#731a04",
+            "tertiary-fixed-dim": "#e7c268",
+            "surface-tint": "#36684c",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#002111",
+            "inverse-surface": "#33302d",
+            "tertiary": "#4e3b00",
+            "surface-variant": "#e8e1dc",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c0c9c0",
+            "inverse-on-surface": "#f7efea",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#a0d5b3",
+            "on-secondary-fixed-variant": "#83260e",
+            "surface-container-low": "#faf2ed",
+            "surface-container-high": "#eee7e2",
+            "primary-fixed": "#b8efcc",
+            "background": "#fff8f4",
+            "on-error-container": "#93000a",
+            "surface": "#fff8f4",
+            "primary-container": "#2c5e43",
+            "secondary-container": "#ff8162",
+            "on-tertiary-fixed-variant": "#5a4400",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#3c0700",
+            "outline": "#717972",
+            "surface-container": "#f4ece7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow-card {
+      box-shadow: 0px 4px 16px -2px rgba(44, 94, 67, 0.06), 0px 2px 6px -1px rgba(38, 35, 32, 0.04);
+    }
+    .custom-shadow-cta {
+      box-shadow: 0px 12px 32px -4px rgba(44, 94, 67, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface flex flex-col min-h-screen font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar (Shared Component from JSON) -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-margin py-space-sm w-full bg-surface-container-lowest dark:bg-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<div class="flex items-center gap-space-lg">
+<span class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight">NutriCan</span>
+<!-- Search Bar on left as defined in JSON -->
+<div class="relative hidden lg:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span>
+<input class="pl-9 pr-4 py-1.5 w-64 bg-surface-container text-on-surface placeholder:text-on-surface-variant text-body-sm font-body-sm rounded-full border-none focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="Buscar dietas, ingredientes o guías..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Catálogo</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Planes de Suscripción</a>
+<!-- Active navigation item according to page context (Calculadora Veterinaria / Recomendador) -->
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 font-label-lg text-label-lg transition-colors duration-200" href="#">Calculadora Nutricional</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Blog Veterinario</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-space-md">
+<!-- Cart Icon Action -->
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors duration-200 rounded-full hover:bg-surface-container" title="Carrito de Compras">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2.5 h-2.5 bg-secondary rounded-full"></span>
+</button>
+<!-- Max Pet Profile Badge / Secondary Action -->
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-surface-container rounded-full border border-outline-variant hover:border-primary cursor-pointer transition-all active:scale-95 duration-150">
+<div class="w-6 h-6 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Close-up candid portrait photograph of a happy Golden Retriever named Max with shiny golden fur, cheerful eyes, illuminated by warm natural morning light against an earth-toned background in a cozy home setting, conveying veterinary health and vitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG1viKdvyYajNpn8YCckQBTZxaE-TvOVkJ-Bp0HHqr-xIwI5YZ95CigDEM1zDc8wjgTGZ3xa2jwxJ0G4MSR6nIz4Jw-jENLrM781v-FUEWzQ_-c4wovEhfHr8C7JctkqEVlyDqVNh7snj3DJHu5NKYNMNNPym9crBB5vQMKpHK10A5qui-UYqaXh7l4TeWWi_vw8TTzE8WGR72KtDK9oZlsV5ySlxUSf8iu1vrJB8oYLURmfYLzvss"/>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Max - Golden Retriever</span>
+</div>
+<!-- Primary Action -->
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full font-label-lg text-label-lg hover:bg-primary-container transition-all active:scale-95 duration-150 shadow-sm">
+        Mi Cuenta
+      </button>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-margin py-space-lg">
+<!-- Breadcrumbs & Pet Switch Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-lg">
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Mis Mascotas</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="text-primary font-bold" href="#">Perfil Nutricional de Max</a>
+<span class="inline-flex items-center gap-1 ml-2 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Validado por Dra. Sofía Valdés (MVZ)
+        </span>
+</div>
+<!-- Action: Switch / Add Pet -->
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-primary text-primary hover:bg-surface-container font-label-md text-label-md transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">pets</span>
+<span>Cambiar de perfil</span>
+</button>
+<button class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-secondary text-on-secondary font-label-md text-label-md hover:opacity-90 transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Agregar otra mascota</span>
+</button>
+</div>
+</div>
+<!-- Comprehensive 2-Column Dashboard Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (40% -> 5 cols in 12-col grid) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Pet Identity Card -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-lg custom-shadow-card border border-[#ECE7E1]">
+<div class="flex items-start gap-4">
+<div class="relative w-24 h-24 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A regal and joyful adult Golden Retriever sitting proudly outdoors in a serene, sunlit meadow garden. The dog has soft honey-colored coat, intelligent warm hazel eyes, and an alert healthy posture. Shot with a prime 85mm lens, shallow depth of field, warm organic aesthetic fitting a premium veterinary wellness portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnY0kSF8w3rPQITTaGtEd2y4rK2uZHRC7CPe8fgnenJCPAB95RNjvMmdiHcZVJWJjWgRDH-wK08jP-b6YnaD7K1CJD5NCOd2hTCoO_Lq9o-FbxszNadrUdxflfBQnpic9x388kGU7LJ6VUfKrFkAksnqB7J0pMbwz_YpvqtqBTCCwqaNmlZMeoUmyf8U2Ol-0pZdd0QS7GBZ_SeQUkqy6osF-c2To9O7e73-f8vU7EcADsFBAq_WhK"/>
+<span class="absolute bottom-1 right-1 bg-primary text-on-primary p-1 rounded-full text-xs flex items-center justify-center shadow" title="Perfil Clínico Activo">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h1 class="font-headline-md text-headline-md text-primary font-bold truncate">Max</h1>
+<span class="px-2.5 py-1 bg-surface-container text-on-surface-variant font-label-sm text-label-sm rounded-full">
+                  ID: NC-8842-MX
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Golden Retriever • 3 años y 2 meses</p>
+<div class="mt-3 flex flex-wrap gap-2 text-xs">
+<span class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">scale</span>
+                  31.0 kg (Peso actual)
+                </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">medical_services</span>
+                  Macho castrado
+                </span>
+</div>
+</div>
+</div>
+<!-- Activity Level Badge & Summary -->
+<div class="mt-space-md pt-space-md border-t border-[#ECE7E1]">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">directions_run</span>
+                Nivel de actividad: Alto
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">~2 horas diarias</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low p-2.5 rounded-xl">
+              Max realiza paseos intensos matutinos y sesiones de parque/juego con cobro de pelota. Su requerimiento metabólico basal (RER) está ajustado con factor multiplicador 1.6x.
+            </p>
+</div>
+</section>
+<!-- Objetivos de Salud & Diagnóstico Clínico -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-lg custom-shadow-card border border-[#ECE7E1]">
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">fact_check</span>
+              Diagnóstico y Objetivos
+            </h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">
+              3 Focos Activos
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Parámetros nutricionales recomendados por el equipo veterinario para optimizar la digestión y preservar las articulaciones de razas grandes:
+          </p>
+<div class="space-y-space-sm">
+<!-- Objective Tag 1: Articular -->
+<div class="p-3 rounded-xl bg-[#2C5E43]/[0.08] border border-primary/20 flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">accessibility_new</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-primary">Cuidado Articular Preventivo</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed px-2 py-0.5 rounded-full">Prioridad Alta</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+                  Enriquecimiento obligatorio con Glucosamina (min. 750 mg/kg), Condroitina y EPA/DHA biodisponibles.
+                </p>
+</div>
+</div>
+<!-- Objective Tag 2: Alergia al Pollo -->
+<div class="p-3 rounded-xl bg-secondary/[0.10] border border-secondary/30 flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-secondary">Alergia / Sensibilidad al Pollo</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full">Exclusión Total</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+                  Exclusión estricta de subproductos aviares, grasa de ave no purificada y harinas de pluma para evitar dermatitis atópica.
+                </p>
+</div>
+</div>
+<!-- Objective Tag 3: Mantenimiento de Peso -->
+<div class="p-3 rounded-xl bg-surface-container border border-outline-variant/60 flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-dim text-on-surface flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Mantenimiento de Peso Ideal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Target: 30 - 32 kg</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Condición corporal actual 5/9 (Ideal). Control de densidad calórica por volumen de fibra fermentable.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Requerimiento Calórico Diario Card (Donut Tracker) -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-lg custom-shadow-card border border-[#ECE7E1]">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">local_fire_department</span>
+              Requerimiento Calórico Diario
+            </h2>
+<span class="text-xs px-2.5 py-1 bg-primary/10 text-primary font-bold rounded-full">100% Cubierto</span>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-6">
+<!-- Circular Donut Tracker Representation -->
+<div class="relative w-36 h-36 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Track background -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#F3EFEA" stroke-width="12"></circle>
+<!-- Segment: Proteína (Forest Sage) 30% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#2C5E43" stroke-dasharray="251.2" stroke-dashoffset="125.6" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Segment: Grasas Saludables (Terracotta) 20% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#E76F51" stroke-dasharray="251.2" stroke-dashoffset="188.4" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Segment: Carbohidratos & Fibras (Amber Harvest) 50% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#eac56b" stroke-dasharray="251.2" stroke-dashoffset="210" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<!-- Center Metric -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-md text-headline-md font-bold text-primary leading-tight">1,550</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">kcal / día</span>
+</div>
+</div>
+<!-- Legend & Clinical breakdown -->
+<div class="flex-1 w-full space-y-2.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container inline-block"></span>
+<span class="font-medium text-on-surface">Proteína Bruta (28%)</span>
+</div>
+<span class="font-bold text-primary">434 kcal</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary inline-block"></span>
+<span class="font-medium text-on-surface">Grasas &amp; Omega-3 (16%)</span>
+</div>
+<span class="font-bold text-secondary">248 kcal</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim inline-block"></span>
+<span class="font-medium text-on-surface">Fibras &amp; Carbohidratos Complejos</span>
+</div>
+<span class="font-bold text-tertiary">868 kcal</span>
+</div>
+<div class="pt-2 text-[11px] text-on-surface-variant italic border-t border-[#ECE7E1]">
+                Fórmula FEDIAF para caninos adultos activos de más de 25 kg.
+              </div>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN (60% -> 7 cols in 12-col grid) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Calculadora Interactiva de Ración Diaria -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-lg custom-shadow-card border border-[#ECE7E1]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#ECE7E1] pb-space-md mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Dosificación Personalizada</span>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Ración Diaria y División por Tomas</h2>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full text-on-surface text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">inventory_2</span>
+<span>Bolsa 12 kg: dura ~31 días</span>
+</div>
+</div>
+<!-- Seasonal / Activity Adjustment Slider -->
+<div class="bg-surface-container-low rounded-xl p-space-md mb-space-md">
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5" for="activity-adjuster">
+<span class="material-symbols-outlined text-[18px] text-primary">tune</span>
+                Ajuste Estacional o de Apetito:
+              </label>
+<span class="font-label-md text-label-md text-primary font-bold bg-surface-container-lowest px-3 py-0.5 rounded-full border border-outline-variant" id="activity-label">
+                Óptimo estándar (100%)
+              </span>
+</div>
+<!-- Custom 3-step radio-like slider track -->
+<input class="w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer transition-all" id="activity-adjuster" max="3" min="1" oninput="updateRation(this.value)" step="1" type="range" value="2"/>
+<div class="flex justify-between text-xs text-on-surface-variant font-medium mt-2 px-1">
+<span class="cursor-pointer" onclick="setSlider(1)">Reposo (-20%)</span>
+<span class="cursor-pointer text-primary font-bold" onclick="setSlider(2)">Óptimo Estándar</span>
+<span class="cursor-pointer" onclick="setSlider(3)">Intenso (+20%)</span>
+</div>
+</div>
+<!-- Morning / Evening Ration Bento Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center mb-space-md">
+<!-- Mañana -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-[#ECE7E1] hover:border-primary/40 transition-colors">
+<div class="w-9 h-9 mx-auto mb-2 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">light_mode</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface-variant block">Mañana (08:00 AM)</span>
+<div class="my-1.5">
+<span class="font-headline-md text-headline-md font-extrabold text-primary" id="morning-grams">190</span>
+<span class="text-body-sm font-semibold text-primary">g</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block" id="morning-cups">~1.6 tazas medidoras</span>
+</div>
+<!-- Noche -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-[#ECE7E1] hover:border-primary/40 transition-colors">
+<div class="w-9 h-9 mx-auto mb-2 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bedtime</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface-variant block">Noche (19:30 PM)</span>
+<div class="my-1.5">
+<span class="font-headline-md text-headline-md font-extrabold text-primary" id="night-grams">190</span>
+<span class="text-body-sm font-semibold text-primary">g</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block" id="night-cups">~1.6 tazas medidoras</span>
+</div>
+<!-- Total Diario Summary Card -->
+<div class="p-4 rounded-xl bg-primary-container text-on-primary border border-primary flex flex-col justify-center">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-primary-container font-semibold">Total Diario</span>
+<div class="my-1">
+<span class="text-2xl font-extrabold text-white" id="total-grams">380</span>
+<span class="text-body-md font-medium text-white/90">g / día</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim" id="pouch-duration">31 días por bolsa (12 kg)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-3 bg-surface-container rounded-xl text-on-surface text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<span>Consejo clínico: Divide en 2 tomas fijas para prevenir la torsión gástrica, común en Golden Retrievers.</span>
+</div>
+</section>
+<!-- Fórmulas y Alimentos Ideales para Max -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-lg custom-shadow-card border border-[#ECE7E1]">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Nutrición de Precisión</span>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Fórmulas Clínicamente Ideales para Max</h2>
+</div>
+<span class="hidden sm:inline-flex items-center gap-1 text-xs text-primary font-bold bg-primary/10 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+              Filtro: Cero Pollo + Omega 3
+            </span>
+</div>
+<!-- Product Option 1: Salmón & Camote (TOP MATCH 99%) -->
+<div class="p-space-md rounded-2xl border-2 border-primary/40 bg-surface-bright mb-space-md transition-all hover:border-primary">
+<div class="flex flex-col md:flex-row gap-4 items-start">
+<div class="relative w-full md:w-36 h-36 rounded-xl overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A premium bag of NutriCan holistic dog food titled Salmon and Sweet Potato grain-free recipe, placed on an organic light wooden kitchen counter. Beautiful Nordic aesthetic, crisp studio daylight, fresh wild salmon cuts and orange sweet potatoes subtly visible next to the bag, high resolution pet nutrition packaging photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2XL3HpATpMyGqjl8EKIUPBV0MEXzl5wbq5DimG4zVGmZurFTvirQAqvVx655Sw9bFDacBWcCth7H7nFb4l8kMLi_jpdgRJU5mFmWjAPjPUFbCQw8Q20jGhtTyv8nwNGKahe-cRxkKuaQUglI_HC2HqXaIdQ5xmvwpflUGH3v0GPo9WCaCcbWsS-_cdsPdUM45fBU25-khuPTN_kglGJi5gU8n0JZEMbAW0FS-1d53fwoHPGkjVcHI"/>
+<span class="absolute top-2 left-2 bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-sm">
+                  99% Match
+                </span>
+</div>
+<div class="flex-1 w-full">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">NutriCan Salmón &amp; Camote Grain-Free</h3>
+<div class="text-right">
+<span class="text-xl font-bold text-primary">$1,173 MXN</span>
+<span class="text-body-sm font-normal text-on-surface-variant block">Bolsa 12 kg (31 días)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                  Fórmula hipoalergénica con Salmón del Pacífico como única proteína animal. Libre de granos, enriquecida con aceite de linaza y 850 mg de glucosamina para protección articular.
+                </p>
+<!-- Attribute Chips -->
+<div class="mt-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary/10 text-primary font-semibold">
+                    ✓ 100% Cero Pollo
+                  </span>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary/10 text-secondary font-semibold">
+                    ✓ Rico en EPA &amp; DHA
+                  </span>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+                    Condroitina 600 mg
+                  </span>
+</div>
+<!-- CTA Row -->
+<div class="mt-4 pt-3 border-t border-[#ECE7E1] flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+<span>Envío programado cada 4 semanas (Ahorra 10%)</span>
+</div>
+<button class="w-full sm:w-auto px-6 py-2.5 bg-secondary text-on-secondary font-label-lg text-label-lg font-bold rounded-full hover:bg-secondary/90 transition-all active:scale-95 custom-shadow-cta flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Configurar Plan de Entrega</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Option 2: Cordero Hipoalergénico (94% Match) -->
+<div class="p-space-md rounded-2xl border border-[#ECE7E1] bg-surface-container-lowest hover:border-outline transition-all mb-space-md">
+<div class="flex flex-col md:flex-row gap-4 items-start">
+<div class="relative w-full md:w-28 h-28 rounded-xl overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A sleek packaging bag of NutriCan Hypoallergenic Lamb recipe dog food on a minimalist clean stone surface, surrounded by crisp natural ingredients like peas and cranberries under bright soft ambient light, warm organic veterinary styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsCN6LZjk-RDLgdkD7FSO0mE58UOAPFPiJzVPwqL36how-FyOb-oKwDoPsC7AYofgnUdFTAwvdzjFv1YmdyBzXcZgmR01odx6qyxijMlTrsljgtjVEf5J6dm37s5GQRt8ad3ob62wYEO6nEugpa3PP9Uz7H6LUT4PrJbIZoFugUm_gT2sxS0N15egh_0YDAW638nSzMfgN6UJRpzOfT9S66wN6zH2ZbVWlJpwFOKhI0Dxy6NY12oXO"/>
+<span class="absolute top-2 left-2 bg-surface-dim text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">
+                  94% Match
+                </span>
+</div>
+<div class="flex-1 w-full">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<h4 class="font-title-md text-title-md text-on-surface font-bold">NutriCan Cordero Hipoalergénico Monoproteico</h4>
+<div class="text-right">
+<span class="text-lg font-bold text-on-surface">$1,250 MXN</span>
+<span class="text-body-sm text-on-surface-variant block">Bolsa 12 kg</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Proteína de cordero de pastoreo neozelandés, balanceada con calabaza y probióticos bio-activos para digestiones sensibles.
+                </p>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold">✓ Alternativa recomendada para rotación cada 6 meses</span>
+<button class="px-4 py-1.5 rounded-full border border-primary text-primary hover:bg-surface-container font-label-md text-label-md transition-all active:scale-95">
+                    Ver Detalles
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Suplementos complementarios sugeridos -->
+<div class="bg-surface-container-low rounded-xl p-space-md border border-[#ECE7E1]">
+<h4 class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5 mb-3">
+<span class="material-symbols-outlined text-[18px] text-primary">healing</span>
+              Suplementos Clínicos Coadyuvantes
+            </h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- Supplement 1 -->
+<div class="flex items-center gap-3 p-2.5 bg-surface-container-lowest rounded-xl border border-outline-variant/60">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">water_drop</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Aceite de Salmón Silvestre</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">500 ml • 2 pulsaciones/día</p>
+<span class="font-label-sm text-label-sm text-secondary font-bold">+$290 MXN</span>
+</div>
+<button class="p-1.5 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors" title="Añadir a Max">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<!-- Supplement 2 -->
+<div class="flex items-center gap-3 p-2.5 bg-surface-container-lowest rounded-xl border border-outline-variant/60">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[24px]">cookie</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Masticables Condroprotectores</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">60 bocados con sabor natural</p>
+<span class="font-label-sm text-label-sm text-secondary font-bold">+$340 MXN</span>
+</div>
+<button class="p-1.5 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors" title="Añadir a Max">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Descargar / Compartir Ficha Nutricional en PDF -->
+<section class="bg-surface-container-low rounded-2xl p-space-md border border-[#ECE7E1] flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-primary">Ficha Nutricional Clínica (PDF)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Descarga o envía un resumen estructurado para la próxima revisión médica con tu veterinario de cabecera.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-surface-container-lowest border border-primary text-primary font-label-md text-label-md rounded-full hover:bg-surface-container transition-all active:scale-95 shadow-sm" onclick="simulatePdfDownload()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Descargar PDF</span>
+</button>
+<button class="p-2 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-colors active:scale-95" onclick="simulateShare()" title="Compartir enlace">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Notification Toast (Hidden by default, triggered via JS) -->
+<div class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50 bg-primary text-on-primary px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3" id="toast">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-text">Ficha descargada con éxito.</span>
+</div>
+<!-- Footer (Shared Component from JSON) -->
+<footer class="w-full px-margin py-space-xl mt-auto bg-surface-container dark:bg-surface-container-highest text-on-surface dark:text-on-surface border-t border-outline-variant dark:border-outline">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row items-start justify-between gap-space-lg">
+<div>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">NutriCan</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant mt-2 max-w-sm">
+            Nutrición canina holística, clínica y adaptativa. Fórmulas formuladas por veterinarios para maximizar los años de vida y bienestar de tu mejor amigo.
+          </p>
+</div>
+<!-- Dynamic Grid of links matching the JSON specification -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-8">
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Catálogo Completo</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Planes Personalizados</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Calculadora de Calorías</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Guías Nutricionales</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Preguntas Frecuentes</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Suscripción y Envíos</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Políticas de Devolución</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Aviso Legal y Privacidad</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Compromiso Veterinario</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Sostenibilidad e Ingredientes</a>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/40 flex flex-col sm:flex-row items-center justify-between text-body-sm font-body-sm text-on-surface-variant gap-4">
+<span>© 2024 NutriCan Canine Nutrition S.L. Nutrición veterinaria holística y balanceada. Todos los derechos reservados.</span>
+<div class="flex items-center gap-4 text-xs font-semibold text-primary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">verified</span> Calidad AAFCO &amp; FEDIAF</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">eco</span> Empaques 100% Reciclables</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Vanilla Micro-interaction Logic -->
+<script>
+    const baseRation = 380; // 380g standard
+    const morningGramsEl = document.getElementById('morning-grams');
+    const morningCupsEl = document.getElementById('morning-cups');
+    const nightGramsEl = document.getElementById('night-grams');
+    const nightCupsEl = document.getElementById('night-cups');
+    const totalGramsEl = document.getElementById('total-grams');
+    const pouchDurationEl = document.getElementById('pouch-duration');
+    const activityLabelEl = document.getElementById('activity-label');
+    const activitySlider = document.getElementById('activity-adjuster');
+
+    function updateRation(step) {
+      step = parseInt(step, 10);
+      let factor = 1.0;
+      let label = "Óptimo estándar (100%)";
+
+      if (step === 1) {
+        factor = 0.8;
+        label = "Reposo / Menor Actividad (-20%)";
+      } else if (step === 2) {
+        factor = 1.0;
+        label = "Óptimo estándar (100%)";
+      } else if (step === 3) {
+        factor = 1.2;
+        label = "Intenso / Clima Frío (+20%)";
+      }
+
+      activityLabelEl.textContent = label;
+      
+      const newTotal = Math.round(baseRation * factor);
+      const half = Math.round(newTotal / 2);
+      const cups = (half / 120).toFixed(1); // approx 120g per standard measuring cup
+      const days = Math.round(12000 / newTotal);
+
+      morningGramsEl.textContent = half;
+      morningCupsEl.textContent = `~${cups} tazas medidoras`;
+      nightGramsEl.textContent = half;
+      nightCupsEl.textContent = `~${cups} tazas medidoras`;
+      totalGramsEl.textContent = newTotal;
+      pouchDurationEl.textContent = `~${days} días por bolsa (12 kg)`;
+    }
+
+    function setSlider(val) {
+      activitySlider.value = val;
+      updateRation(val);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3000);
+    }
+
+    function simulatePdfDownload() {
+      showToast("Descargando PDF: Ficha_Clinica_Max_NutriCan.pdf");
+    }
+
+    function simulateShare() {
+      navigator.clipboard?.writeText(window.location.href);
+      showToast("Enlace de ficha clínica copiado al portapapeles");
+    }
+  </script>
+</body></html>
+
+<!-- NutriCan - Catálogo Web Desktop -->
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NutriCan | Catálogo de Nutrición Canina Veterinaria</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#11462d",
+            "on-surface": "#1e1b18",
+            "surface-dim": "#e0d9d4",
+            "secondary": "#a33d23",
+            "surface-bright": "#fff8f4",
+            "on-tertiary-container": "#eac56b",
+            "on-surface-variant": "#414943",
+            "on-background": "#1e1b18",
+            "on-primary-fixed-variant": "#1d5036",
+            "secondary-fixed-dim": "#ffb4a2",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#9dd3b0",
+            "surface-container-highest": "#e8e1dc",
+            "on-tertiary-fixed": "#251a00",
+            "inverse-primary": "#9dd3b0",
+            "secondary-fixed": "#ffdad2",
+            "tertiary-fixed": "#ffdf96",
+            "tertiary-container": "#6a5100",
+            "on-secondary-container": "#731a04",
+            "tertiary-fixed-dim": "#e7c268",
+            "surface-tint": "#36684c",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#002111",
+            "inverse-surface": "#33302d",
+            "tertiary": "#4e3b00",
+            "surface-variant": "#e8e1dc",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c0c9c0",
+            "inverse-on-surface": "#f7efea",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#a0d5b3",
+            "on-secondary-fixed-variant": "#83260e",
+            "surface-container-low": "#faf2ed",
+            "surface-container-high": "#eee7e2",
+            "primary-fixed": "#b8efcc",
+            "background": "#fff8f4",
+            "on-error-container": "#93000a",
+            "surface": "#fff8f4",
+            "primary-container": "#2c5e43",
+            "secondary-container": "#ff8162",
+            "on-tertiary-fixed-variant": "#5a4400",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#3c0700",
+            "outline": "#717972",
+            "surface-container": "#f4ece7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="bg-primary-container text-on-primary font-body-sm text-body-sm py-2 px-margin text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base" data-icon="local_shipping">local_shipping</span>
+<span><strong>Envío Gratis</strong> en tu primera entrega con Auto-Envío Veterinario. Código: <strong>NUTRISALUD15</strong></span>
+</div>
+<!-- SHARED COMPONENT: TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-margin py-space-sm w-full bg-surface-container-lowest shadow-sm border-b border-outline-variant">
+<div class="flex items-center gap-8 flex-1 max-w-4xl">
+<!-- Brand Logo -->
+<a class="flex items-center gap-2 flex-shrink-0" href="#">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="pets">pets</span>
+<span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">NutriCan</span>
+</a>
+<!-- Search Bar on Left -->
+<div class="relative w-full max-w-xs lg:max-w-sm hidden sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+</span>
+<input class="w-full bg-surface-container rounded-full pl-10 pr-4 py-2 text-body-md font-body-md text-on-surface border border-transparent focus:border-primary focus:bg-surface-container-lowest focus:outline-none transition-all placeholder:text-outline text-xs" placeholder="Buscar alimento holístico, snacks, suplementos..." type="text"/>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden xl:flex items-center gap-6">
+<!-- Active link: Catálogo -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Catálogo</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-200" href="#">Planes de Suscripción</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-200" href="#">Calculadora Nutricional</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors duration-200" href="#">Blog Veterinario</a>
+</nav>
+</div>
+<!-- Trailing Actions & Dog Profile Selector -->
+<div class="flex items-center gap-4">
+<!-- Pet Selector Chip -->
+<button class="flex items-center gap-2.5 bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant hover:border-primary transition-colors text-left">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up warm portrait of an energetic purebred Golden Retriever dog looking directly at the camera with gentle eyes in natural warm morning sunlight. The background has subtle organic sage green tones evoking natural wellness and high quality pet health care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTf5Z4TxOSvHrbavjQ8NeXrrqmjMhPrS05q2s0HAdO1p8XcdctMxYbdWBdug1wNsoOymATzzNynhEZUt6SQqepQHe91E9RnckrdcVAXKpbMjFVIF4-HW2EpwqqSZrDyRgrNcFojOMyX7B8XCPpoJtSEO1lSyeMGGK3rk6bLbBNS2Fsx-BjuQjaGpvhdfpDyz51_kwA855LCReJrve0ZVB1Mgjl2rrV_0TYcnmWPp-zREVVFAWFV9Y9"/>
+</div>
+<div class="hidden md:block leading-tight">
+<div class="font-label-md text-label-md text-primary font-bold flex items-center gap-1">
+<span>Max - Golden Retriever</span>
+<span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3 años • 31 kg</span>
+</div>
+</button>
+<!-- Account Button -->
+<a class="hidden lg:flex items-center gap-1.5 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors px-2 py-1" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+<span>Mi Cuenta</span>
+</a>
+<!-- Shopping Bag -->
+<button class="relative p-2.5 rounded-full bg-surface-container text-on-surface hover:text-primary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary font-label-sm text-label-sm w-5 h-5 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+<!-- HERO SECTION: Auto-Envío & Subscription Highlight -->
+<section class="relative rounded-3xl overflow-hidden bg-primary text-on-primary shadow-lg border border-outline-variant/30">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-center min-h-[360px]">
+<!-- Text & Value Props -->
+<div class="lg:col-span-7 p-8 sm:p-12 z-10 space-y-6">
+<div class="inline-flex items-center gap-2 bg-primary-container/80 text-on-primary-container px-3.5 py-1.5 rounded-full font-label-md text-label-md backdrop-blur-sm border border-on-primary-container/20">
+<span class="material-symbols-outlined text-sm" data-icon="autorenew">autorenew</span>
+<span>Programa Inteligente NutriCan Auto-Envío</span>
+</div>
+<div class="space-y-3">
+<h1 class="font-display-lg text-display-lg font-extrabold text-on-primary tracking-tight leading-tight">
+              Nutrición clínica fresca con <span class="text-secondary-fixed">15% de ahorro</span> continuo.
+            </h1>
+<p class="font-body-lg text-body-lg text-inverse-on-surface/90 max-w-xl">
+              Fórmulas adaptadas por veterinarios para la etapa, nivel de actividad y digestión de tu perro. Recibe porciones exactas en tu puerta.
+            </p>
+</div>
+<!-- Key Value Pillars -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+<div class="flex items-center gap-2 text-on-primary">
+<span class="material-symbols-outlined text-inverse-primary" data-icon="check_circle">check_circle</span>
+<span class="font-label-md text-label-md">Envío programado gratis</span>
+</div>
+<div class="flex items-center gap-2 text-on-primary">
+<span class="material-symbols-outlined text-inverse-primary" data-icon="health_and_safety">health_and_safety</span>
+<span class="font-label-md text-label-md">Fórmulas veterinarias</span>
+</div>
+<div class="flex items-center gap-2 text-on-primary">
+<span class="material-symbols-outlined text-inverse-primary" data-icon="event_repeat">event_repeat</span>
+<span class="font-label-md text-label-md">Pausa o cancela libre</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-4 pt-4">
+<button class="bg-secondary text-on-secondary font-label-lg text-label-lg px-7 py-3.5 rounded-full shadow-md hover:bg-secondary/90 transition-all transform active:scale-95 font-bold flex items-center gap-2">
+<span>Activar suscripción</span>
+<span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="bg-surface-container-lowest/15 backdrop-blur-md border border-on-primary/30 text-on-primary font-label-lg text-label-lg px-6 py-3.5 rounded-full hover:bg-surface-container-lowest/25 transition-all">
+              Ver cómo funciona
+            </button>
+</div>
+</div>
+<!-- Hero Featured Image & Badge -->
+<div class="lg:col-span-5 relative h-72 lg:h-full min-h-[360px] overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover object-center" data-alt="Joyful healthy adult Golden Retriever sitting comfortably beside an elegant ceramic bowl with fresh vibrant raw wholesome dog kibble salmon sweet potato ingredients with soft studio light on clean cream and sage green backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBgW08P_gN3br7Y4EDDrKmDOgY12AwiJAtK_AaEpJQm371S0FmuvJYWycx4xQ2w49eRUz8XnPP-s_naQzWt9tWYcf7rjEPFBztgpWMo5_VAF-w2zcBxhuJuaf4p3Dul94LzmJuCgzbZe6TiZFRx2_bYojhUo_In3m9HVj0bjbrWhf9II1PU0ckBc_e83LT5VpSx9VyAIW0Ag655GCOqOYIzk3hDtDb0TcFmHWPoOq6WWfuDHh4XMx4"/>
+<div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-primary via-primary/30 to-transparent"></div>
+<!-- Floating Micro Badge -->
+<div class="absolute bottom-6 right-6 bg-surface-container-lowest/95 backdrop-blur-md p-4 rounded-2xl shadow-xl text-on-surface max-w-[210px] border border-outline-variant">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="verified">verified</span>
+<span class="font-label-md text-label-md font-bold text-primary">Nutrición Certificada</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aprobado por el Colegio de Médicos Veterinarios Nutricionistas.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CATEGORY NAVIGATION STRIP -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Explorar por Categoría</h2>
+<a class="font-label-lg text-label-lg text-secondary font-semibold hover:underline flex items-center gap-1" href="#">
+<span>Ver todas</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+<!-- Category 1 -->
+<a class="group bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center" href="#">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="grain">grain</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Croquetas &amp; Pienso</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fórmulas secas prensadas</span>
+</a>
+<!-- Category 2 -->
+<a class="group bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center" href="#">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="soup_kitchen">soup_kitchen</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Comida Húmeda</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Estofados y patés frescos</span>
+</a>
+<!-- Category 3 -->
+<a class="group bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center" href="#">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="restaurant">restaurant</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Dietas BARF</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Carne cruda ultracongelada</span>
+</a>
+<!-- Category 4 -->
+<a class="group bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center" href="#">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="cookie">cookie</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Snacks Funcionales</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Articulaciones &amp; dental</span>
+</a>
+<!-- Category 5 -->
+<a class="group bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center" href="#">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="medication">medication</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Suplementos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Omegas, probióticos &amp; pelo</span>
+</a>
+</div>
+</section>
+<!-- DOG NUTRITION HEALTH BANNER (Tailored for Max) -->
+<section class="bg-surface-container-low border border-primary/20 rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="monitoring">monitoring</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Metas nutricionales activas de Max</h3>
+<span class="bg-primary/10 text-primary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full">Actualizado hace 2 semanas</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+<strong>85% Proteína de alta biodisponibilidad</strong> y soporte de condroprotectores para articulaciones grandes.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="tune">tune</span>
+<span>Recalcular requerimientos calóricos</span>
+</button>
+</div>
+</section>
+<!-- MAIN TWO-COLUMN LAYOUT (Filters + Product Showcase) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT SIDEBAR FILTERS -->
+<aside class="lg:col-span-3 bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant space-y-6 shadow-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="filter_alt">filter_alt</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Filtros</span>
+</div>
+<button class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary underline">Limpiar</button>
+</div>
+<!-- Filter 1: Etapa de vida -->
+<div class="space-y-3">
+<label class="font-label-lg text-label-lg font-bold text-on-surface block">Etapa de Vida</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Cachorro (0 - 12 meses)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface font-semibold text-primary">Adulto (1 - 7 años)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Senior (7+ años)</span>
+</label>
+</div>
+</div>
+<!-- Filter 2: Tamaño de raza -->
+<div class="space-y-3 pt-2 border-t border-outline-variant">
+<label class="font-label-lg text-label-lg font-bold text-on-surface block">Tamaño de Raza</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Raza Pequeña (&lt; 10kg)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Raza Mediana (10 - 25kg)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface font-semibold text-primary">Raza Grande (&gt; 25kg)</span>
+</label>
+</div>
+</div>
+<!-- Filter 3: Necesidad especial -->
+<div class="space-y-3 pt-2 border-t border-outline-variant">
+<label class="font-label-lg text-label-lg font-bold text-on-surface block">Necesidad Especial</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Sin Granos (Grain-Free)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Hipoalergénico / Monoproteico</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Cuidado Articular &amp; Cadera</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Control de Peso / Light</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Digestión Sensible</span>
+</label>
+</div>
+</div>
+<!-- Filter 4: Rango de precio -->
+<div class="space-y-3 pt-2 border-t border-outline-variant">
+<div class="flex justify-between items-center">
+<label class="font-label-lg text-label-lg font-bold text-on-surface">Rango de Precio</label>
+<span class="font-body-sm text-body-sm text-primary font-bold">$80 - $2,200 MXN</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer" max="2200" min="80" type="range" value="1600"/>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>$80 MXN</span>
+<span>$2,200+ MXN</span>
+</div>
+</div>
+<!-- Filter 5: Preferencias Proteicas -->
+<div class="space-y-3 pt-2 border-t border-outline-variant">
+<label class="font-label-lg text-label-lg font-bold text-on-surface block">Proteína Principal</label>
+<div class="flex flex-wrap gap-2">
+<button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-md text-label-md">Salmón Salvaje</button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-variant px-3 py-1 rounded-full font-label-md text-label-md">Cordero</button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-variant px-3 py-1 rounded-full font-label-md text-label-md">Pavo de Campo</button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-variant px-3 py-1 rounded-full font-label-md text-label-md">Pato</button>
+</div>
+</div>
+<!-- Quick Subscription Toggle Promo -->
+<div class="bg-secondary-fixed/50 border border-secondary/20 p-4 rounded-xl text-left space-y-2">
+<span class="font-label-md text-label-md font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="savings">savings</span>
+            Descuento Recurrente
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ahorra 15% en todos los pedidos seleccionando Auto-Envío en el producto.</p>
+</div>
+</aside>
+<!-- RIGHT MAIN CONTENT SHOWCASE -->
+<section class="lg:col-span-9 space-y-6">
+<!-- PERSONALIZED BANNER: Match for Max -->
+<div class="bg-surface-container-lowest border-2 border-primary/30 rounded-2xl p-5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Recomendado para Max</span>
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-bold">98% Match Nutricional</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Basado en raza (Golden Retriever), edad (3 años) y nivel de actividad alta en exteriores.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-outline">Ordenar por:</span>
+<select class="bg-surface-container border border-outline-variant rounded-lg text-body-sm font-body-sm text-on-surface px-3 py-1.5 focus:border-primary focus:outline-none">
+<option>Mayor afinidad con Max</option>
+<option>Precio: Menor a Mayor</option>
+<option>Precio: Mayor a Menor</option>
+<option>Mejor Valorados</option>
+</select>
+</div>
+</div>
+<!-- PRODUCT GRID (Cards with details, bag sizes, auto-ship tag) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+<!-- Product Card 1: Salmón & Sweet Potato -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<!-- Top Badges -->
+<div class="flex items-center justify-between mb-3">
+<span class="bg-primary/10 text-primary text-label-sm font-label-sm px-3 py-1 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="star">star</span>
+                  Top Match 98%
+                </span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm px-2.5 py-1 rounded-full font-bold">
+                  Auto-Envío -15%
+                </span>
+</div>
+<!-- Product Image -->
+<div class="relative h-48 w-full bg-surface-container rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4">
+<img class="max-h-full object-contain" data-alt="Premium sleek packaging of NutriCan Adult Salmon and Sweet Potato grain free holistic dry dog food bag placed on clean natural studio surface with fresh raw salmon fillet and organic herbs in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6UgKy-BYbn7KLd15CC0T8PfJQP0PdfmXC-xlFrXNdjjwXX99eVxa3ZTCMq6uGS6q_0gBCTSnNpAbxnb1Ep8OBWS5Xag4L3Z2glEs8HHT20oe1AeQkBzmo5E2fD6iM6Ke_eMbOWuq9djJukJ-lkmGE5HHMvNNzQEN6V82hnF8RE3W5NsgE_zgAooHOkrBVRRxdntnCBZ3vqKom07us61N-M2nAQKpweuXrRiGx9PSnYLCRUFuw9mjX"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-surface-container-lowest/80 text-outline hover:text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Rating & Category -->
+<div class="flex items-center gap-2 mb-1">
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">4.9</span>
+<span class="font-body-sm text-body-sm text-outline">(184 reseñas)</span>
+</div>
+<!-- Product Title -->
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">
+                NutriCan Salmón &amp; Sweet Potato Grain-Free
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Fórmula hipoalergénica con Omega-3 y glucosamina para salud articular de razas grandes y piel brillante.
+              </p>
+<!-- Portion / Bag Size Selector -->
+<div class="space-y-1.5 mb-4">
+<span class="font-label-sm text-label-sm text-outline font-bold">Seleccionar Presentación:</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant text-body-sm font-body-sm rounded-lg hover:border-primary text-on-surface">3 kg</button>
+<button class="px-3 py-1 bg-primary text-on-primary font-bold text-body-sm font-body-sm rounded-lg shadow-sm">12 kg</button>
+<button class="px-3 py-1 border border-outline-variant text-body-sm font-body-sm rounded-lg hover:border-primary text-on-surface">18 kg</button>
+</div>
+</div>
+</div>
+<!-- Price & Buy Box -->
+<div class="border-t border-outline-variant pt-4 mt-2">
+<div class="flex items-baseline justify-between mb-3">
+<div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary">$1,450 MXN</span>
+<span class="font-body-sm text-body-sm text-outline line-through ml-2">$1,705 MXN</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">$1,232 con Auto-Envío</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="border border-primary text-primary font-label-md text-label-md py-2.5 rounded-full hover:bg-primary/5 transition-colors font-bold text-center">
+                  Ver Detalle
+                </button>
+<button class="bg-secondary text-on-secondary font-label-md text-label-md py-2.5 rounded-full hover:bg-secondary/90 transition-all shadow font-bold flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="shopping_bag">shopping_bag</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2: NutriCan Cordero Hipoalergénico -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<!-- Top Badges -->
+<div class="flex items-center justify-between mb-3">
+<span class="bg-surface-container text-on-surface-variant text-label-sm font-label-sm px-3 py-1 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="eco">eco</span>
+                  Digestión Sensible
+                </span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm px-2.5 py-1 rounded-full font-bold">
+                  Auto-Envío -15%
+                </span>
+</div>
+<!-- Product Image -->
+<div class="relative h-48 w-full bg-surface-container rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4">
+<img class="max-h-full object-contain" data-alt="Holistic lamb and brown rice veterinary grade dry dog food in organic green and white packaging on clean background with sage tint accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4BNm9jA1_SEg8nqMnX1U0ZkkjDm3LuDObmYx9vgHWBWLHoTUfEeSgPgqBItwQ2vxsD4MhDUCtGFdrL0vpYepyEprIDP5McHDltWxH-GnYyM04uvO7ONSkkD4C3iXXB5ktUOPIXXhmdUxAapwb067VMIukLUIA3xgaoyfpQqy9neohfr15vFBpzI2uhK-l9D7JATzieXY02xH4p04dZZTIF2zStuynUi3eRNTMmw8_ojDlia8aLcHA"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-surface-container-lowest/80 text-outline hover:text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Rating & Reviews -->
+<div class="flex items-center gap-2 mb-1">
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm text-outline" data-icon="star">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">4.8</span>
+<span class="font-body-sm text-body-sm text-outline">(92 reseñas)</span>
+</div>
+<!-- Product Title -->
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">
+                NutriCan Cordero Pastoril Monoproteico
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Proteína selecta para canes con intolerancias gástricas y sensibilidades dermatológicas.
+              </p>
+<!-- Portion / Bag Size Selector -->
+<div class="space-y-1.5 mb-4">
+<span class="font-label-sm text-label-sm text-outline font-bold">Seleccionar Presentación:</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant text-body-sm font-body-sm rounded-lg hover:border-primary text-on-surface">3 kg</button>
+<button class="px-3 py-1 bg-primary text-on-primary font-bold text-body-sm font-body-sm rounded-lg shadow-sm">12 kg</button>
+<button class="px-3 py-1 border border-outline-variant text-body-sm font-body-sm rounded-lg hover:border-primary text-on-surface">15 kg</button>
+</div>
+</div>
+</div>
+<!-- Price & Buy Box -->
+<div class="border-t border-outline-variant pt-4 mt-2">
+<div class="flex items-baseline justify-between mb-3">
+<div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary">$1,380 MXN</span>
+<span class="font-body-sm text-body-sm text-outline line-through ml-2">$1,550 MXN</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">$1,173 con Auto-Envío</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="border border-primary text-primary font-label-md text-label-md py-2.5 rounded-full hover:bg-primary/5 transition-colors font-bold text-center">
+                  Ver Detalle
+                </button>
+<button class="bg-secondary text-on-secondary font-label-md text-label-md py-2.5 rounded-full hover:bg-secondary/90 transition-all shadow font-bold flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="shopping_bag">shopping_bag</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3: Suplemento Aceite de Salmón Noruego -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<!-- Top Badges -->
+<div class="flex items-center justify-between mb-3">
+<span class="bg-primary/10 text-primary text-label-sm font-label-sm px-3 py-1 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="water_drop">water_drop</span>
+                  EPA + DHA Puro
+                </span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm px-2.5 py-1 rounded-full font-bold">
+                  Auto-Envío -15%
+                </span>
+</div>
+<!-- Product Image -->
+<div class="relative h-48 w-full bg-surface-container rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4">
+<img class="max-h-full object-contain" data-alt="Amber glass pump dispenser bottle of pure wild Alaskan salmon oil for canine coat health with minimalist apothecary label resting on natural marble." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDe96WyGp_DKbbBkY_WTmH1eKkRft6VDzo9y68h85bU6rKH9txfhq7mWcCLe3Q1V0keuWe8TZG85yGOYyStM-Q40i8hBAIPzPRe-ewDN6AsWARtyg_IJcpvtaIhtQgOCbxfDlFwWQyus0QSq55jWJKkT41o7JZg4YXFcdGiYpxLrSJgFzbNTSBbFUjBKFrY7ChtCrd535_5vSUfBDmy1AyT9rshYh4SAOuY8OaZE2gptN9YdLawhLB"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-surface-container-lowest/80 text-outline hover:text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Rating & Reviews -->
+<div class="flex items-center gap-2 mb-1">
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">5.0</span>
+<span class="font-body-sm text-body-sm text-outline">(310 reseñas)</span>
+</div>
+<!-- Product Title -->
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">
+                Suplemento Aceite de Salmón Noruego Prensado en Frío
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Estimula la densidad del manto capilar, reduce muda excesiva y apoya articulaciones activas.
+              </p>
+<!-- Portion / Size Selector -->
+<div class="space-y-1.5 mb-4">
+<span class="font-label-sm text-label-sm text-outline font-bold">Seleccionar Presentación:</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-primary text-on-primary font-bold text-body-sm font-body-sm rounded-lg shadow-sm">500 ml</button>
+<button class="px-3 py-1 border border-outline-variant text-body-sm font-body-sm rounded-lg hover:border-primary text-on-surface">1,000 ml</button>
+</div>
+</div>
+</div>
+<!-- Price & Buy Box -->
+<div class="border-t border-outline-variant pt-4 mt-2">
+<div class="flex items-baseline justify-between mb-3">
+<div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary">$425 MXN</span>
+<span class="font-body-sm text-body-sm text-outline line-through ml-2">$490 MXN</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">$361 con Auto-Envío</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="border border-primary text-primary font-label-md text-label-md py-2.5 rounded-full hover:bg-primary/5 transition-colors font-bold text-center">
+                  Ver Detalle
+                </button>
+<button class="bg-secondary text-on-secondary font-label-md text-label-md py-2.5 rounded-full hover:bg-secondary/90 transition-all shadow font-bold flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="shopping_bag">shopping_bag</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4: Alimento Húmedo Cordero & Calabaza -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<!-- Top Badges -->
+<div class="flex items-center justify-between mb-3">
+<span class="bg-surface-container text-on-surface-variant text-label-sm font-label-sm px-3 py-1 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="soup_kitchen">soup_kitchen</span>
+                  100% Ingredientes Grado Humano
+                </span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm px-2.5 py-1 rounded-full font-bold">
+                  Pack x12 (-20%)
+                </span>
+</div>
+<!-- Product Image -->
+<div class="relative h-48 w-full bg-surface-container rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4">
+<img class="max-h-full object-contain" data-alt="Individual can and open dish of savory wet canine stew with lamb pumpkin and steamed carrots shown in warm natural light on rustic table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDekG_CoaBOSr4c41WUEFNztATSscxkwt1H0H9vG1hjuIH5qmnY7W3kvJ3yJQ5Z9wM4gPiK_YqSAxC5uCMOdR6H0izdttUxmnvjcwtjIyy1NY8j7aAKN1PJXkV8elFrEt3XW_phvPp4Jwz7qGysovOKdaDK949xuvp5yVN7tmxcIlIUEHQ0W0lHOM59cS4ge841rXZXPhPcrvjMMq4cHQAxIuA-txG_sQaGYS8l5Rks7WWbsGQ3H25s"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-surface-container-lowest/80 text-outline hover:text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Rating & Reviews -->
+<div class="flex items-center gap-2 mb-1">
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">4.9</span>
+<span class="font-body-sm text-body-sm text-outline">(64 reseñas)</span>
+</div>
+<!-- Product Title -->
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">
+                Alimento Húmedo Cordero de Pasto &amp; Calabaza Asada
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Estofado artesanal de hidratación profunda, cocinado a fuego lento con fibra prebiótica natural.
+              </p>
+<!-- Portion / Size Selector -->
+<div class="space-y-1.5 mb-4">
+<span class="font-label-sm text-label-sm text-outline font-bold">Seleccionar Formato:</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-primary text-on-primary font-bold text-body-sm font-body-sm rounded-lg shadow-sm">Lata 400g</button>
+<button class="px-3 py-1 border border-outline-variant text-body-sm font-body-sm rounded-lg hover:border-primary text-on-surface">Pack x6</button>
+<button class="px-3 py-1 border border-outline-variant text-body-sm font-body-sm rounded-lg hover:border-primary text-on-surface">Pack x12</button>
+</div>
+</div>
+</div>
+<!-- Price & Buy Box -->
+<div class="border-t border-outline-variant pt-4 mt-2">
+<div class="flex items-baseline justify-between mb-3">
+<div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary">$88 MXN</span>
+<span class="font-body-sm text-body-sm text-outline">/ unidad</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">$74.80 con Auto-Envío</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="border border-primary text-primary font-label-md text-label-md py-2.5 rounded-full hover:bg-primary/5 transition-colors font-bold text-center">
+                  Ver Detalle
+                </button>
+<button class="bg-secondary text-on-secondary font-label-md text-label-md py-2.5 rounded-full hover:bg-secondary/90 transition-all shadow font-bold flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="shopping_bag">shopping_bag</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- FLASH OFFERS & TOP SELLERS SECTION -->
+<div class="bg-surface-container rounded-2xl p-6 border border-outline-variant space-y-4 mt-10">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="timer">timer</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Ofertas Relámpago de Temporada</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lotes limitados con nutrientes frescos de cosecha de otoño.</p>
+</div>
+</div>
+<!-- Countdown Pill -->
+<div class="flex items-center gap-1 bg-surface-container-lowest px-3 py-1.5 rounded-xl border border-outline-variant self-start sm:self-auto font-label-sm text-label-sm">
+<span class="text-outline">Termina en:</span>
+<span class="font-bold text-secondary">08h : 34m : 12s</span>
+</div>
+</div>
+<!-- Horizontal mini-grid/carousel of flash products -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+<!-- Flash Item 1 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant flex items-center gap-3">
+<div class="w-16 h-16 bg-surface-container rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center p-1">
+<img class="max-h-full object-contain" data-alt="Pack of healthy organic dehydrated chicken liver treats for dogs in recyclable bag on warm studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGzoi1cXP1WFm6EWlJd-g3EdlK4bzA9I0Hjijx-zrDaYyi7DMIT5CQhxpJ4uV2_0WRsK9QuCsaum6Nl636GkisMzfoQ8qZlrxyU1xSWXoml_kLxKqwVACpZ5tYK973y-YeuMZJBjE3mYxcQRNNME9RXBw7Wd78DC8Y5j3g3dO0FmY6LlUHO9qrs1D7ZpBjTzb55AIxqCRfGIWecMWdAgMEu6Pg-oThQOdqHH-7N__A-k7O1BQ5YyXJ"/>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-secondary font-bold">-25% FLASH</span>
+<h5 class="font-label-md text-label-md font-bold text-primary truncate">Snack Hígado Deshidratado</h5>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-bold text-on-surface">$165 MXN</span>
+<span class="font-body-sm text-body-sm text-outline line-through">$220</span>
+</div>
+</div>
+</div>
+<!-- Flash Item 2 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant flex items-center gap-3">
+<div class="w-16 h-16 bg-surface-container rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center p-1">
+<img class="max-h-full object-contain" data-alt="Glass bottle of veterinary grade liquid glucosamine joint supplement for dogs on clean light surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxJla4oclOc6P_wvOyLFM1TaiYKbgPScKBXmKsXjfEWa9qgJ2dmZcbBpFET-d_fRbQW_0xKsD7rVG4q7sYQCwtFrs1AF3s4sGSBNNqfcK8hBPFd3PFiHy9ISP6_T12LVQASW5bpafDipT7BN2kKW6RMsGCXwB_5GAhI6ZmVt005qdP0UpjPEaPtg0HLtvfr3omc97n5f4QcDRB11vZEFx7Ag1787PrqF9bDOtImKF94AQxOA_XetOp"/>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-secondary font-bold">-20% FLASH</span>
+<h5 class="font-label-md text-label-md font-bold text-primary truncate">Condroprotector Líquido</h5>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-bold text-on-surface">$512 MXN</span>
+<span class="font-body-sm text-body-sm text-outline line-through">$640</span>
+</div>
+</div>
+</div>
+<!-- Flash Item 3 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant flex items-center gap-3">
+<div class="w-16 h-16 bg-surface-container rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center p-1">
+<img class="max-h-full object-contain" data-alt="Organic botanical chew sticks for canine dental care with kelp and mint ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZhh4zzgRS0xYUy55CujEmkkOmYK8jYuRF0f5MdMQJU67lUxBflYMfZm2D8XRIyj_rY9wSKBL3nHrdW4m0RPawFaGxDvEXOmXjxRLVdGCMoq2YWrr_0xsDwnX31seodn4tj1GfEEg_jYqvKZwqjLVYTu73eYDBstcnfkAUtG0a2gKH09DPFPXS_xQmJdIcf9fsZU7rJRxerIrGms9sdTEKVo8Ru9F7PwR6bLe4rlWbGbrpWnJbrLpr"/>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-secondary font-bold">-30% FLASH</span>
+<h5 class="font-label-md text-label-md font-bold text-primary truncate">Dental Sticks Kelp Marino</h5>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-bold text-on-surface">$199 MXN</span>
+<span class="font-body-sm text-body-sm text-outline line-through">$285</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PAGINATION & RESULTS COUNT -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-outline-variant">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mostrando 4 de 48 recetas y suplementos recomendados</span>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-lg border border-outline-variant flex items-center justify-center text-outline hover:border-primary hover:text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary text-on-primary font-bold text-label-md font-label-md">1</button>
+<button class="w-9 h-9 rounded-lg border border-outline-variant text-on-surface hover:border-primary text-label-md font-label-md">2</button>
+<button class="w-9 h-9 rounded-lg border border-outline-variant text-on-surface hover:border-primary text-label-md font-label-md">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-9 h-9 rounded-lg border border-outline-variant text-on-surface hover:border-primary text-label-md font-label-md">12</button>
+<button class="w-9 h-9 rounded-lg border border-outline-variant flex items-center justify-center text-outline hover:border-primary hover:text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- VETERINARY TRUST BADGES SECTION -->
+<section class="border-y border-outline-variant py-10 my-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div class="space-y-2">
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="clinical_notes">clinical_notes</span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-primary">Formulación Clínica</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Supervisado por nutriólogos veterinarios acreditados.</p>
+</div>
+<div class="space-y-2">
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="local_shipping">local_shipping</span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-primary">Cadena de Frío &amp; Entrega Express</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Empaques aislados térmicos 100% compostables.</p>
+</div>
+<div class="space-y-2">
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="support_agent">support_agent</span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-primary">Asesoría Médica Incluida</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consulta directa con especialistas para suscriptores.</p>
+</div>
+<div class="space-y-2">
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="shield">shield</span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-primary">Garantía de Adaptación</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Si tu mascota no ama el sabor, ajustamos su fórmula sin costo.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- SHARED COMPONENT: Footer -->
+<footer class="w-full px-margin py-space-xl mt-auto bg-surface-container text-on-surface border-t border-outline-variant">
+<div class="max-w-7xl mx-auto space-y-12">
+<!-- Upper Footer Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+<!-- Brand Column -->
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="pets">pets</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">NutriCan</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+            Nutrición canina holística, consciente y formulada con rigor veterinario para prolongar los años de vida activa de tu mejor amigo.
+          </p>
+<!-- Newsletter Form -->
+<div class="space-y-2 pt-2">
+<span class="font-label-md text-label-md font-bold text-primary">Suscríbete al Boletín Nutricional Canino</span>
+<div class="flex gap-2 max-w-md">
+<input class="bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-full px-4 py-2.5 border border-outline-variant focus:border-primary focus:outline-none flex-grow text-xs" placeholder="Ingresa tu correo electrónico" type="email"/>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-full hover:bg-primary-container transition-colors font-bold flex-shrink-0">
+                Unirme
+              </button>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Recibe guías de longevidad canina y 10% en tu primera compra.</p>
+</div>
+</div>
+<!-- Links Column 1: Navegación Principal -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary">Catálogo &amp; Planes</h4>
+<ul class="space-y-2 font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Catálogo Completo</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Planes Personalizados</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Calculadora de Calorías</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Guías Nutricionales</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Compromiso Veterinario</a></li>
+</ul>
+</div>
+<!-- Links Column 2: Ayuda & Servicio -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary">Atención al Cliente</h4>
+<ul class="space-y-2 font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Preguntas Frecuentes</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Suscripción y Envíos</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Políticas de Devolución</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Sostenibilidad e Ingredientes</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contacto Veterinario</a></li>
+</ul>
+</div>
+<!-- Links Column 3: Legal & Confianza -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary">Transparencia</h4>
+<ul class="space-y-2 font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Aviso Legal y Privacidad</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Términos de Servicio</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Certificaciones AAFCO &amp; FEDIAF</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Portal de Proveedores</a></li>
+</ul>
+<div class="pt-2 flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="verified">verified</span>
+<span class="material-symbols-outlined text-2xl" data-icon="lock">lock</span>
+<span class="material-symbols-outlined text-2xl" data-icon="eco">eco</span>
+</div>
+</div>
+</div>
+<!-- Bottom Bar: Copyright & Payment Badges -->
+<div class="border-t border-outline-variant pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant">
+<p>© 2024 NutriCan Canine Nutrition S.L. Nutrición veterinaria holística y balanceada. Todos los derechos reservados.</p>
+<div class="flex items-center gap-4 text-outline">
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base" data-icon="credit_card">credit_card</span>
+            Pagos 100% Seguros SSL
+          </span>
+<span>•</span>
+<span>Visa, Mastercard, AMEX, PayPal</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
